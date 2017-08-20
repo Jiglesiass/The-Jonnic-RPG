@@ -1,0 +1,218 @@
+fileFormatVersion: 2
+guid: 29bd77095140e7746adcd3217c768e98
+timeCreated: 1503244753
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.001_end
+    100008: Bone.002
+    100010: Bone.002_end
+    100012: Bone.003
+    100014: Bone.003_end
+    100016: Bone.004
+    100018: Bone.004_end
+    100020: Bone.005
+    100022: Bone.005_end
+    100024: Bone.006
+    100026: Bone.006_end
+    100028: Bone.007
+    100030: Bone.007_end
+    100032: Bone.008
+    100034: Bone.008_end
+    100036: Bone.009
+    100038: Bone.009_end
+    100040: Bone.010
+    100042: Bone.010_end
+    100044: Bone.011
+    100046: Bone.011_end
+    100048: Bone.012
+    100050: Bone.012_end
+    100052: Bone.013
+    100054: Bone.013_end
+    100056: Bone.014
+    100058: Bone.014_end
+    100060: Bone.015
+    100062: Bone.015_end
+    100064: Bone_end
+    100066: Cube.081
+    100068: Cube.082
+    100070: Cube.083
+    100072: Cube.084
+    100074: Cube.085
+    100076: Cube.086
+    100078: //RootNode
+    100080: Wing Row A.01
+    100082: Wing Row A.02
+    100084: Wing Row A.03
+    100086: Wing Row A.04
+    100088: Wing Row A.05
+    100090: Wing Row A.06
+    100092: Wing Row A.07
+    100094: Wing Row A.08
+    100096: Wing Row A.09
+    100098: Wing Row A.10
+    400000: Armature
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.001_end
+    400008: Bone.002
+    400010: Bone.002_end
+    400012: Bone.003
+    400014: Bone.003_end
+    400016: Bone.004
+    400018: Bone.004_end
+    400020: Bone.005
+    400022: Bone.005_end
+    400024: Bone.006
+    400026: Bone.006_end
+    400028: Bone.007
+    400030: Bone.007_end
+    400032: Bone.008
+    400034: Bone.008_end
+    400036: Bone.009
+    400038: Bone.009_end
+    400040: Bone.010
+    400042: Bone.010_end
+    400044: Bone.011
+    400046: Bone.011_end
+    400048: Bone.012
+    400050: Bone.012_end
+    400052: Bone.013
+    400054: Bone.013_end
+    400056: Bone.014
+    400058: Bone.014_end
+    400060: Bone.015
+    400062: Bone.015_end
+    400064: Bone_end
+    400066: Cube.081
+    400068: Cube.082
+    400070: Cube.083
+    400072: Cube.084
+    400074: Cube.085
+    400076: Cube.086
+    400078: //RootNode
+    400080: Wing Row A.01
+    400082: Wing Row A.02
+    400084: Wing Row A.03
+    400086: Wing Row A.04
+    400088: Wing Row A.05
+    400090: Wing Row A.06
+    400092: Wing Row A.07
+    400094: Wing Row A.08
+    400096: Wing Row A.09
+    400098: Wing Row A.10
+    4300000: Cube.081
+    4300002: Cube.082
+    4300004: Cube.083
+    4300006: Cube.084
+    4300008: Cube.085
+    4300010: Cube.086
+    4300012: Wing Row A.01
+    4300014: Wing Row A.02
+    4300016: Wing Row A.03
+    4300018: Wing Row A.04
+    4300020: Wing Row A.05
+    4300022: Wing Row A.06
+    4300024: Wing Row A.07
+    4300026: Wing Row A.08
+    4300028: Wing Row A.09
+    4300030: Wing Row A.10
+    7400000: Armature|ShieldFolded
+    7400002: Armature|ShieldUnfold
+    7400004: Armature|ShieldUnfolded
+    9500000: //RootNode
+    13700000: Cube.081
+    13700002: Cube.082
+    13700004: Cube.083
+    13700006: Cube.084
+    13700008: Cube.085
+    13700010: Cube.086
+    13700012: Wing Row A.01
+    13700014: Wing Row A.02
+    13700016: Wing Row A.03
+    13700018: Wing Row A.04
+    13700020: Wing Row A.05
+    13700022: Wing Row A.06
+    13700024: Wing Row A.07
+    13700026: Wing Row A.08
+    13700028: Wing Row A.09
+    13700030: Wing Row A.10
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
