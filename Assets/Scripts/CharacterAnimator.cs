@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class CharacterAnimator : MonoBehaviour {
-
-	public Transform weapon;
+public class CharacterAnimator : MonoBehaviour
+{
 
 	const float locomotionAnimationSmoothTime = .2f;
 
@@ -22,10 +21,5 @@ public class CharacterAnimator : MonoBehaviour {
     {
         float speedPercent = agent.velocity.magnitude / agent.speed;
         animator.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
-	}
-
-	public void ChangeWeaponParent(GameObject newParent)
-	{
-		weapon.parent = newParent.transform;
 	}
 }

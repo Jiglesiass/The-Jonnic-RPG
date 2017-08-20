@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 29bd77095140e7746adcd3217c768e98
-timeCreated: 1503244753
+guid: a73cb070ddc227545a4064b3be555776
+timeCreated: 1503260176
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -121,9 +121,10 @@ ModelImporter:
     4300026: Wing Row A.08
     4300028: Wing Row A.09
     4300030: Wing Row A.10
-    7400000: Armature|ShieldFolded
-    7400002: Armature|ShieldUnfold
-    7400004: Armature|ShieldUnfolded
+    7400000: Armature|ShieldFold
+    7400002: Armature|ShieldFolded
+    7400004: Armature|ShieldUnfold
+    7400006: Armature|ShieldUnfolded
     9500000: //RootNode
     13700000: Cube.081
     13700002: Cube.082
