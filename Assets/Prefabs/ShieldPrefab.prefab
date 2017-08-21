@@ -1579,6 +1579,8 @@ MonoBehaviour:
   weapon: {fileID: 4615947509075650}
   newParent: {fileID: 0}
   shieldAnimator: {fileID: 95503731715391586}
+  rightHandPos: {x: 0, y: 0, z: 0}
+  rightHandRot: {x: 0, y: 0, z: 0}
 --- !u!137 &137043816507516850
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
