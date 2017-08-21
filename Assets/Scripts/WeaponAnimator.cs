@@ -7,7 +7,13 @@ public class WeaponAnimator : MonoBehaviour
 	public Animator shieldAnimator;
 
 	private Animator anim;
-	private bool folded = true;
+	private bool swordOut;
+	[SerializeField]
+	private Vector3 rightHandPos, rightHandRot;
+	private Vector3 leftHandPos, leftHandRot;
+
+	private bool startCounting;
+	private float time = 0.33f;
 
 	private void Awake()
 	{
@@ -16,18 +22,35 @@ public class WeaponAnimator : MonoBehaviour
 
 	void Start ()
 	{
-		AddEvent(0, 0.33f, "ChangeWeaponParent", newParent);
+		leftHandPos = transform.position;
+		leftHandRot = transform.rotation.eulerAngles;
 	}
 	
 	void Update ()
 	{
 		if (Input.GetKeyDown(KeyCode.V))
 		{
-			anim.SetBool("swordOut", true); 
+			swordOut = !swordOut;
+			anim.SetBool("swordOut", swordOut);
+			startCounting = true;
+		}
+
+		if (startCounting)
+		{
+			time -= Time.deltaTime;
+			if (time <= 0)
+			{
+				Debug.Log("Changing parent");
+				ChangeWeaponParent(newParent.gameObject);
+				weapon.localPosition = rightHandPos;
+				Quaternion rot = Quaternion.Euler(rightHandRot.x, rightHandRot.y, rightHandRot.z);
+				weapon.localRotation = rot;
+				startCounting = false;
+			}
 		}
 	}
 
-	public void ChangeWeaponParent(GameObject newParent)
+	private void ChangeWeaponParent(GameObject newParent)
 	{
 		weapon.parent = newParent.transform;
 		AnimateShield();
@@ -35,25 +58,6 @@ public class WeaponAnimator : MonoBehaviour
 
 	private void AnimateShield()
 	{
-		if (folded)
-		{
-			shieldAnimator.SetTrigger("unfold");
-			folded = false;
-		}
-		else
-		{
-			shieldAnimator.SetTrigger("fold");
-			folded = true;
-		}
-	}
-
-	void AddEvent(int Clip, float time, string functionName, Object objectReferenceParameter)
-	{
-		AnimationEvent animationEvent = new AnimationEvent();
-		animationEvent.functionName = functionName;
-		animationEvent.objectReferenceParameter = objectReferenceParameter;
-		animationEvent.time = time;
-		AnimationClip clip = anim.runtimeAnimatorController.animationClips[Clip];
-		clip.AddEvent(animationEvent);
+		shieldAnimator.SetBool("swordOut", swordOut);
 	}
 }

@@ -573,8 +573,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1140396627}
   shield: {fileID: 787707726}
-  weapon: {fileID: 0}
-  rightHand: {fileID: 0}
 --- !u!54 &324138045
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1445,6 +1443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1140396628}
   - component: {fileID: 1140396629}
+  - component: {fileID: 1140396630}
   m_Layer: 0
   m_Name: Link
   m_TagString: Untagged
@@ -1476,7 +1475,7 @@ Animator:
   m_GameObject: {fileID: 1140396627}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 30f0d8a32f7be4445992c16778d1b61a, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8b69303fbfec9354282196bdfb953b81, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8022c6cebe0c4e1408d9f170798e0d3e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1484,6 +1483,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1140396630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140396627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167ce73efa9de8a4386c763adbedde22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 1458016665}
+  newParent: {fileID: 2040496759}
+  shieldAnimator: {fileID: 1458016664}
+  rightHandPos: {x: 0.000554, y: 0.000474, z: 0.003427}
+  rightHandRot: {x: -177.752, y: 7.068985, z: -78.62399}
 --- !u!1 &1154561339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,6 +2007,16 @@ Prefab:
 --- !u!4 &1458016663 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4433498345506596, guid: 62f5603e3d9e4b045bc0980846b5b7a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1458016662}
+--- !u!95 &1458016664 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95503731715391586, guid: 62f5603e3d9e4b045bc0980846b5b7a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1458016662}
+--- !u!4 &1458016665 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4615947509075650, guid: 62f5603e3d9e4b045bc0980846b5b7a0,
     type: 2}
   m_PrefabInternal: {fileID: 1458016662}
 --- !u!1 &1492118356
