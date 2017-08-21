@@ -775,6 +775,10 @@ Prefab:
       propertyPath: m_Name
       value: ShieldPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 1041779515613512, guid: 62f5603e3d9e4b045bc0980846b5b7a0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114839011940894196, guid: 62f5603e3d9e4b045bc0980846b5b7a0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 62f5603e3d9e4b045bc0980846b5b7a0, type: 2}

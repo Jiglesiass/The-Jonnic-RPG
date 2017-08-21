@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 4383632224138694}
   - component: {fileID: 95191928267874418}
   m_Layer: 0
-  m_Name: linkLowPolyDonePrefab
+  m_Name: linkLowPolyDone 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
