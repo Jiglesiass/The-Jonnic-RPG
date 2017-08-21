@@ -571,6 +571,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0309297d458b34a4bb9dbffb4fb3f71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1140396627}
+  shield: {fileID: 787707726}
+  weapon: {fileID: 0}
+  rightHand: {fileID: 0}
 --- !u!54 &324138045
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1021,6 +1025,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &787707726 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1041779515613512, guid: 62f5603e3d9e4b045bc0980846b5b7a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1458016662}
 --- !u!1 &788490066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,7 +1980,13 @@ Prefab:
       propertyPath: newParent
       value: 
       objectReference: {fileID: 2040496759}
-    m_RemovedComponents: []
+    - target: {fileID: 95503731715391586, guid: 62f5603e3d9e4b045bc0980846b5b7a0,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c3187738621b28e48a98d0bd0f8e3c0a, type: 2}
+    m_RemovedComponents:
+    - {fileID: 114839011940894196, guid: 62f5603e3d9e4b045bc0980846b5b7a0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 62f5603e3d9e4b045bc0980846b5b7a0, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1458016663 stripped
