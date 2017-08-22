@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,23 +6,17 @@ public class CharacterAnimator : MonoBehaviour
 
     const float locomotionAnimationSmoothTime = .2f;
 
-    public GameObject character;
-    public GameObject shield;
-
-    private NavMeshAgent agent;
-    private Animator characterAnimator;
-    private Animator shieldAnimator;
-    private bool swordOut;
+    public NavMeshAgent agent;
+    private Animator anim;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        characterAnimator = character.GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         float speedPercent = agent.velocity.magnitude / agent.speed;
-        characterAnimator.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
+        anim.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
     }
 }
