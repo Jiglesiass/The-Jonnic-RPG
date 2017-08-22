@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class CharacterAnimatorCombined : MonoBehaviour
+public class Player : MonoBehaviour
 {
 	public Transform weapon;
 	public Transform newParent;
