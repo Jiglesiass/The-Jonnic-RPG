@@ -9,11 +9,12 @@ public class CharacterAnimatorCombined : MonoBehaviour
 
 	private NavMeshAgent agent;      //need agent of parent
 	private Animator anim;
-	private bool swordOut;
+
 	[SerializeField]
 	private Vector3 rightHandPos, rightHandRot;
 	private Vector3 shieldPos, shieldRot;   //pos and rot relative to the shield
 
+	private bool swordOut;
 	private bool startCounting;
 	private float drawTime = 0.33f;
     private float putBackTime = 0.75f;       //longer time for PutBackAnimation
@@ -51,7 +52,7 @@ public class CharacterAnimatorCombined : MonoBehaviour
 			    drawTime -= Time.deltaTime;
 			    if (drawTime <= 0)
 			    {
-				    ChangeWeaponParent(newParent.gameObject);
+				    ChangeWeaponParent(newParent);
 				    weapon.localPosition = rightHandPos;
 				    Quaternion rot = Quaternion.Euler(rightHandRot.x, rightHandRot.y, rightHandRot.z);
 				    weapon.localRotation = rot;
@@ -72,19 +73,19 @@ public class CharacterAnimatorCombined : MonoBehaviour
                 }
                 if (putBackTime <= 0)
                 {
-                    ChangeWeaponParent(shieldAnimator.gameObject);      //AnimateShield method in ChangeWeaponParent doesn't play animation because animation already played
+                    ChangeWeaponParent(shieldAnimator.transform);      //AnimateShield method in ChangeWeaponParent doesn't play animation because animation already played
                     weapon.localPosition = shieldPos;
                     Quaternion rot = Quaternion.Euler(shieldRot.x, shieldRot.y, shieldRot.z);
                     weapon.localRotation = rot;
                     startCounting = false;
-                    putBackTime = 0.7f;
+                    putBackTime = 0.75f;
                     foldTime = 0.4f;
                 }
             }
         }
 	}
 
-	private void ChangeWeaponParent(GameObject newParent)
+	private void ChangeWeaponParent(Transform newParent)
 	{
 		weapon.parent = newParent.transform;
 		AnimateShield();
