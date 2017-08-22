@@ -6,8 +6,8 @@ public class CharacterAnimatorCombined : MonoBehaviour
 	public Transform weapon;
 	public Transform newParent;
 	public Animator shieldAnimator;
-    public NavMeshAgent agent;      //need agent of parent
 
+	private NavMeshAgent agent;      //need agent of parent
 	private Animator anim;
 	private bool swordOut;
 	[SerializeField]
@@ -16,12 +16,13 @@ public class CharacterAnimatorCombined : MonoBehaviour
 
 	private bool startCounting;
 	private float drawTime = 0.33f;
-    private float putBackTime = 0.7f;       //longer time for PutBackAnimation
+    private float putBackTime = 0.75f;       //longer time for PutBackAnimation
     private float foldTime = 0.4f;      //to control time at which shield gets folded
     const float locomotionAnimationSmoothTime = .2f; //smooth time
 
     private void Awake()
 	{
+		agent = GetComponentInParent<NavMeshAgent>();
 		anim = GetComponent<Animator>();
 	}
 
@@ -42,6 +43,7 @@ public class CharacterAnimatorCombined : MonoBehaviour
 			anim.SetBool("swordOut", swordOut);
 			startCounting = true;
 		}
+
         if (swordOut)       //check if weapon gets drawn
         {
 		    if (startCounting)
