@@ -9,58 +9,64 @@ public class EnemyBehaviour : MonoBehaviour
 	private NavMeshAgent agent;
 	private Animator anim;
 
-	private bool attacking;
-	private bool chasing;
+	private bool chase;
+	private bool isAttacking;
 	private float range = 2f;
 
 	private void Awake ()
 	{
 		player = FindObjectOfType<Player>();
 		agent = GetComponent<NavMeshAgent>();
-		anim = GetComponentInChildren<Animator>();
+		anim = GetComponent<Animator>();
 	}
 
 	private void Update()
 	{
-		if (chasing)
+		if (chase)
 		{
+			ChasePlayer();
+
 			float distanceToPlayer = CheckDistanceToPlayer();
 			
-			if (distanceToPlayer <= range)
+			if (distanceToPlayer <= range && !isAttacking)
 			{
-				agent.isStopped = true;
 				Attack();
 			}
+		}
+		else
+		{
+			anim.SetBool("isMoving", false);
 		}
 	}
 
 	private void Attack()
 	{
-		Debug.Log(name + "attacked");
+		transform.LookAt(player.transform);
+		isAttacking = true;
+		agent.isStopped = true;
+		anim.SetTrigger("attack");
 	}
 
-	private void OnTriggerStay(Collider other)
+	public void ResumeMovement()
 	{
-		Player player = other.GetComponentInChildren<Player>();
-
-		if (player && !attacking)
-		{
-			ChasePlayer();
-			chasing = true;
-		}
-		else
-		{
-			chasing = false;
-		}
+		Debug.Log("Resume movement called");
+		agent.isStopped = false;
+		isAttacking = false;
 	}
 
 	private void ChasePlayer()
 	{
 		agent.destination = player.transform.position;
+		anim.SetBool("isMoving", true);
 	}
 
 	private float CheckDistanceToPlayer()
 	{
 		return (player.transform.position - transform.position).magnitude;
+	}
+
+	public void SetChase(bool newValue)
+	{
+		chase = newValue;
 	}
 }
