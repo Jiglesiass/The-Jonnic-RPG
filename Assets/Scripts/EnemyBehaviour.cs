@@ -41,7 +41,8 @@ public class EnemyBehaviour : MonoBehaviour
 
 	private void Attack()
 	{
-		transform.LookAt(player.transform);
+		var targetRot = Quaternion.LookRotation(player.transform.position - transform.position);
+		transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, 5f * Time.deltaTime);
 		isAttacking = true;
 		agent.isStopped = true;
 		anim.SetTrigger("attack");
