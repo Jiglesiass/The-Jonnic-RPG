@@ -124,6 +124,7 @@ ModelImporter:
     7400014: Walk
     7400016: SpinLeft
     7400018: RollForward
+    7400020: SpinRight
     9500000: //RootNode
     13700000: Body
   materials:
@@ -139,13 +140,16 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'BattleStance' has import animation warnings
+    animationImportWarnings: "\nClip 'Default Take' has import animation warnings
       that might lower retargeting quality:\nNote: Activate translation DOF on avatar
       to improve retargeting quality.\n\t'Chest' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\nClip 'RollForward' has
+      and has rotation animation that will be discarded.\n\nClip 'BattleStance' has
       import animation warnings that might lower retargeting quality:\nNote: Activate
       translation DOF on avatar to improve retargeting quality.\n\t'Chest' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'Middle_Finger_1_R'
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RollForward' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Middle_Finger_1_R'
       has translation animation that will be discarded.\n\t'Ring_Finger_1_R' has translation
       animation that will be discarded.\n\t'Index_Finger_1_R' has translation animation
       that will be discarded.\n\t'Pinky_1_R' has translation animation that will be
@@ -155,11 +159,15 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Lower_Leg_L'
       has scale animation that will be discarded.\n\t'Foot_L' has scale animation
       that will be discarded.\n\t'Lower_Leg_R' has scale animation that will be discarded.\n\t'Foot_R'
-      has scale animation that will be discarded.\n\nClip 'Walk' has import animation
+      has scale animation that will be discarded.\n\nClip 'SpinRight' has import animation
       warnings that might lower retargeting quality:\nNote: Activate translation DOF
       on avatar to improve retargeting quality.\n\t'Chest' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'Foot_L' has scale animation
-      that will be discarded.\n\t'Foot_R' has scale animation that will be discarded.\n"
+      and has rotation animation that will be discarded.\n\nClip 'Walk' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'Foot_L' has
+      scale animation that will be discarded.\n\t'Foot_R' has scale animation that
+      will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -399,6 +407,34 @@ ModelImporter:
       takeName: RollForward
       firstFrame: 0
       lastFrame: 82
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SpinRight
+      takeName: SpinRight
+      firstFrame: 0
+      lastFrame: 31
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
