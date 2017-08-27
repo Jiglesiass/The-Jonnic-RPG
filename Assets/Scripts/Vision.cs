@@ -11,7 +11,7 @@ public class Vision : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		Player player = other.GetComponentInChildren<Player>();
+		PlayerAnimator player = other.GetComponentInChildren<PlayerAnimator>();
 
 		if (player)
 		{
@@ -21,7 +21,7 @@ public class Vision : MonoBehaviour
 
 	private void OnTriggerExit(Collider other)
 	{
-		Player player = other.GetComponentInChildren<Player>();
+		PlayerAnimator player = other.GetComponentInChildren<PlayerAnimator>();
 
 		if (player)
 		{

@@ -1,13 +1,18 @@
-using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Assertions;
 
 [RequireComponent(typeof (NavMeshAgent), typeof(BoxCollider), typeof(Rigidbody))]
 public class EnemyBehaviour : MonoBehaviour
 {
-	private Player player;
+	private PlayerAnimator playerAnimator;
 	private NavMeshAgent agent;
 	private Animator anim;
+	private Player player;
+
+	[SerializeField]
+	private float damage = 25f;
 
 	private bool chase;
 	private bool isAttacking;
@@ -15,9 +20,8 @@ public class EnemyBehaviour : MonoBehaviour
 
 	private void Awake ()
 	{
-		player = FindObjectOfType<Player>();
 		agent = GetComponent<NavMeshAgent>();
-		anim = GetComponent<Animator>();
+		GetReferences();
 	}
 
 	private void Update()
@@ -41,33 +45,46 @@ public class EnemyBehaviour : MonoBehaviour
 
 	private void Attack()
 	{
-		var targetRot = Quaternion.LookRotation(player.transform.position - transform.position);
-		transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, 5f * Time.deltaTime);
+		transform.DOLookAt(playerAnimator.transform.position, 0.2f);
 		isAttacking = true;
 		agent.isStopped = true;
 		anim.SetTrigger("attack");
 	}
 
+	public void Hit()
+	{
+		player.TakeDamage(damage);
+	}
+
 	public void ResumeMovement()
 	{
-		Debug.Log("Resume movement called");
 		agent.isStopped = false;
 		isAttacking = false;
 	}
 
 	private void ChasePlayer()
 	{
-		agent.destination = player.transform.position;
+		agent.destination = playerAnimator.transform.position;
 		anim.SetBool("isMoving", true);
 	}
 
 	private float CheckDistanceToPlayer()
 	{
-		return (player.transform.position - transform.position).magnitude;
+		return (playerAnimator.transform.position - transform.position).magnitude;
 	}
 
 	public void SetChase(bool newValue)
 	{
 		chase = newValue;
+	}
+
+	private void GetReferences()
+	{
+		playerAnimator = FindObjectOfType<PlayerAnimator>();
+		Assert.IsNotNull(playerAnimator, "PlayerAnimator not found");
+		anim = GetComponent<Animator>();
+		Assert.IsNotNull(anim, name + "Animator not found");
+		player = FindObjectOfType<Player>();
+		Assert.IsNotNull(player, "Player not found");
 	}
 }
