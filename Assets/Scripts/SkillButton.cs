@@ -12,8 +12,9 @@ public class SpellAttributes
 	public int level = 1;
 }
 
-public class Skill : MonoBehaviour
+public class SkillButton : MonoBehaviour
 {
+	public string key;
 	public GameObject particlePrefab;
 	public Vector3 offset;
 	public SpellAttributes spellAtributes;
