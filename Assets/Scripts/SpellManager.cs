@@ -4,6 +4,7 @@ using UnityEngine;
 // TODO: Add T, 1, 2 and 3. 
 //		 Make sure all SkillButton have they "key" value assigned in the inspector (maybe assign it by default through code just to make sure)
 //		 Check it works
+//		 Add damage logic
 public class SpellManager : MonoBehaviour
 {
 	public static Dictionary<string, SkillButton> spellsPrefabs;
@@ -13,6 +14,7 @@ public class SpellManager : MonoBehaviour
 
 	private void Awake()
 	{
+		spellsPrefabs = new Dictionary<string, SkillButton>();
 		SkillButton[] skillButtons = FindObjectsOfType<SkillButton>();
 
 		foreach (SkillButton spell in skillButtons)
@@ -27,6 +29,7 @@ public class SpellManager : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Q))
 		{
+			Debug.Log("Input received");
 			SkillButton skillButton;
 			if (!spellsPrefabs.TryGetValue("Q", out skillButton))
 			{
@@ -34,6 +37,7 @@ public class SpellManager : MonoBehaviour
 			}
 			else
 			{
+				Debug.Log(skillButton + "Launched");
 				skillButton.Launch(player);
 			}
 		}

@@ -15,8 +15,9 @@ public class PlayerMovement : MonoBehaviour
 		if (Input.GetMouseButton(1))
 		{
 			RaycastHit hit;
+			int layerMask = 1 << 8;
 
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, 8))
+			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, layerMask))
 			{
 				agent.destination = hit.point;
 			}
