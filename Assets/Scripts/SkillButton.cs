@@ -40,7 +40,6 @@ public class SkillButton : MonoBehaviour
 		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, layerMask))
 		{
 			direction = (hit.point - player.transform.position).normalized;
-			Debug.Log(direction);
 		}
 		if (speed > 0f)
 		{
