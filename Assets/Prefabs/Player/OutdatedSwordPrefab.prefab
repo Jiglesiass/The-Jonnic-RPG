@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33901001870066738}
   - component: {fileID: 23399500974958374}
   m_Layer: 0
-  m_Name: SwordPrefab
+  m_Name: OutdatedSwordPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
