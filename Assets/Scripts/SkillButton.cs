@@ -24,6 +24,11 @@ public class SkillButton : MonoBehaviour
 			Debug.Log(name + "is in cooldown");
 			return;
 		}
+		if (player.Mana <= spellAtributes.manaCost)
+		{
+			Debug.Log("Not enough mana");
+			return;
+		}
 
 		GameObject spell = Instantiate(particlePrefab, player.transform.position + offset, Quaternion.identity, player.transform);
 
@@ -34,7 +39,8 @@ public class SkillButton : MonoBehaviour
 
 		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, layerMask))
 		{
-			direction = hit.point.normalized;
+			direction = (hit.point - player.transform.position).normalized;
+			Debug.Log(direction);
 		}
 		if (speed > 0f)
 		{

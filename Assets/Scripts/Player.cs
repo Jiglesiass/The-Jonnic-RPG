@@ -15,6 +15,11 @@ public class Player : MonoBehaviour
 	private float currentHealth;
 	private float currentMana;
 
+	public float Mana
+	{
+		get { return currentMana; }
+	}
+
 	private float manaRegenPerSec = 5f;
 
 	private void Start()
