@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,6 +15,8 @@ public class PlayerAnimator : MonoBehaviour
 	private Vector3 rightHandPos, rightHandRot;
 	private Vector3 shieldPos, shieldRot;   //pos and rot relative to the shield
 
+	private bool freezePosition;
+	private Vector3 positionBeforeAttack;
 	private bool swordOut;
 	private bool startCounting;
 	private float drawTime = 0.33f;
@@ -38,7 +41,8 @@ public class PlayerAnimator : MonoBehaviour
         float speedPercent = agent.velocity.magnitude / agent.speed;    //interaction between agent and animator
         anim.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.V))
+		#region DrawSheathSword
+		if (Input.GetKeyDown(KeyCode.V))
 		{
 			swordOut = !swordOut;
 			anim.SetBool("swordOut", swordOut);
@@ -83,12 +87,49 @@ public class PlayerAnimator : MonoBehaviour
                 }
             }
         }
+		#endregion
+
+		if (Input.GetMouseButton(0))
+		{
+			Attack();
+		}
+		else if (Input.GetMouseButtonUp(0))
+		{
+			anim.ResetTrigger("attack");
+		}
+
+		if (freezePosition)
+		{
+			FreezePosition();
+		}
+	}
+
+	private void Attack()
+	{
+		anim.SetTrigger("attack");
 	}
 
 	private void ChangeWeaponParent(Transform newParent)
 	{
 		weapon.parent = newParent.transform;
 		AnimateShield();
+	}
+
+	private void SetFreezePosition(int value)
+	{
+		freezePosition = (value == 0) ? false : true;
+		if (freezePosition) { GetCurrentPosition(); }
+	}
+
+	private void FreezePosition()
+	{
+		Debug.Log("FreezePosition called");
+		transform.parent.position = positionBeforeAttack;
+	}
+
+	private void GetCurrentPosition()
+	{
+		positionBeforeAttack = transform.parent.position;
 	}
 
 	private void AnimateShield()
