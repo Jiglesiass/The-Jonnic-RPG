@@ -1,6 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
+using DG.Tweening;
+using System.Collections;
+
+public enum PlayerState { attacking, idle, battleStance }
 
 public class PlayerAnimator : MonoBehaviour
 {
@@ -8,21 +11,24 @@ public class PlayerAnimator : MonoBehaviour
 	public Transform newParent;
 	public Animator shieldAnimator;
 
-	private NavMeshAgent agent;      //need agent of parent
+	private NavMeshAgent agent;      
 	private Animator anim;
+	private static PlayerState playerState;
 
 	[SerializeField]
 	private Vector3 rightHandPos, rightHandRot;
-	private Vector3 shieldPos, shieldRot;   //pos and rot relative to the shield
+	private Vector3 shieldPos, shieldRot;   // pos and rot relative to the shield
 
-	private bool freezePosition;
-	private Vector3 positionBeforeAttack;
 	private bool swordOut;
 	private bool startCounting;
 	private float drawTime = 0.33f;
-    private float putBackTime = 0.75f;       //longer time for PutBackAnimation
-    private float foldTime = 0.4f;      //to control time at which shield gets folded
-    const float locomotionAnimationSmoothTime = .2f; //smooth time
+	private float putBackTime = 0.75f;       
+	private float foldTime = 0.4f;
+
+	private bool freezePosition;
+	private Vector3 positionBeforeAttack;
+
+    const float locomotionAnimationSmoothTime = .2f;   // smooth time
 
     private void Awake()
 	{
@@ -32,18 +38,23 @@ public class PlayerAnimator : MonoBehaviour
 
 	void Start ()
 	{
-        shieldPos = weapon.transform.localPosition;     //get the starting pos and rot of the weapon
+		playerState = PlayerState.idle;
+
+        shieldPos = weapon.transform.localPosition;     // get the starting pos and rot of the weapon
 		shieldRot = weapon.transform.localRotation.eulerAngles;
 	}
 	
 	void Update ()
 	{
-        float speedPercent = agent.velocity.magnitude / agent.speed;    //interaction between agent and animator
+		Debug.Log(playerState);
+
+        float speedPercent = agent.velocity.magnitude / agent.speed;    // interaction between agent and animator
         anim.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
 
 		#region DrawSheathSword
 		if (Input.GetKeyDown(KeyCode.V))
 		{
+			playerState = (swordOut) ? PlayerState.idle : PlayerState.battleStance;
 			swordOut = !swordOut;
 			anim.SetBool("swordOut", swordOut);
 			startCounting = true;
@@ -89,23 +100,41 @@ public class PlayerAnimator : MonoBehaviour
         }
 		#endregion
 
-		if (Input.GetMouseButton(0))
+		#region BasicAttack
+
+		if (Input.GetMouseButton(0) && (playerState != PlayerState.attacking && playerState == PlayerState.battleStance))
 		{
+			IEnumerator coroutine = SwitchToAttackStance(0.5f);
+			StartCoroutine(coroutine);
 			Attack();
 		}
-		else if (Input.GetMouseButtonUp(0))
+		else if (Input.GetMouseButtonUp(0) && playerState == PlayerState.attacking)
 		{
 			anim.ResetTrigger("attack");
 		}
-
 		if (freezePosition)
 		{
 			FreezePosition();
 		}
+
+		#endregion
+	}
+
+	private IEnumerator SwitchToAttackStance(float time)
+	{
+		playerState = PlayerState.attacking;
+		yield return new WaitForSeconds(time);
+		playerState = PlayerState.battleStance;
 	}
 
 	private void Attack()
 	{
+		agent.destination = transform.parent.position;
+		RaycastHit hit;
+		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f))
+		{
+			transform.parent.DOLookAt(hit.point, 0.15f, AxisConstraint.Y);
+		}
 		anim.SetTrigger("attack");
 	}
 
@@ -117,13 +146,12 @@ public class PlayerAnimator : MonoBehaviour
 
 	private void SetFreezePosition(int value)
 	{
-		freezePosition = (value == 0) ? false : true;
+		freezePosition = (value != 0);
 		if (freezePosition) { GetCurrentPosition(); }
 	}
 
 	private void FreezePosition()
 	{
-		Debug.Log("FreezePosition called");
 		transform.parent.position = positionBeforeAttack;
 	}
 
@@ -135,5 +163,10 @@ public class PlayerAnimator : MonoBehaviour
 	private void AnimateShield()
 	{
 		shieldAnimator.SetBool("swordOut", swordOut);
+	}
+
+	public static PlayerState GetPlayerState()
+	{
+		return playerState;
 	}
 }

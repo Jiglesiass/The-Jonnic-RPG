@@ -3,25 +3,28 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 	public Transform player;
-	public Transform cameraHolder;
 
 	[SerializeField]
 	private float zoomSpeed = 3f;
+	private Vector3 distanceToPlayer;
 
 	private void Start()
 	{
-		Camera.main.transform.LookAt(cameraHolder.position + Vector3.up);
+		Camera.main.transform.LookAt(player.position + Vector3.up);
+
+		distanceToPlayer = transform.position - player.position;
 	}
 
 	void Update ()
 	{
-		cameraHolder.rotation = Quaternion.identity;
+		transform.position = player.position + distanceToPlayer;
 
 		float mouseWheel = Input.GetAxis("Mouse ScrollWheel");
 
 		if (mouseWheel != 0)
 		{
-			transform.Translate(Vector3.forward * mouseWheel * zoomSpeed);
+			transform.Translate(Vector3.forward * mouseWheel * zoomSpeed, Space.Self);
+			distanceToPlayer = transform.position - player.position;
 		}
 	}
 }
