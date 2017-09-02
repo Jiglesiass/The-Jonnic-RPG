@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class SkillButton : MonoBehaviour
 {
@@ -11,10 +12,13 @@ public class SkillButton : MonoBehaviour
 
 	private Player player;
 	private bool inCD;
+	private Transform particleHolder;
 
 	private void Awake()
 	{
 		player = FindObjectOfType<Player>();
+		particleHolder = GameObject.Find("Particles").transform;
+		Assert.IsNotNull(particleHolder, "Particles GO not found. Please create it.");
 	}
 
 	public void Launch(Transform parent)
@@ -30,7 +34,7 @@ public class SkillButton : MonoBehaviour
 			return;
 		}
 
-		GameObject spell = Instantiate(particlePrefab, player.transform.position + offset, Quaternion.identity, player.transform);
+		GameObject spell = Instantiate(particlePrefab, player.transform.position + offset, Quaternion.identity, particleHolder);
 
 		Vector3 direction = new Vector3();
 		RaycastHit hit;
