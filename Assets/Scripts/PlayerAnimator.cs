@@ -120,13 +120,6 @@ public class PlayerAnimator : MonoBehaviour
 		#endregion
 	}
 
-	private IEnumerator SwitchToAttackStance(float time)
-	{
-		playerState = PlayerState.attacking;
-		yield return new WaitForSeconds(time);
-		playerState = PlayerState.battleStance;
-	}
-
 	private void Attack()
 	{
 		agent.destination = transform.parent.position;
@@ -144,15 +137,15 @@ public class PlayerAnimator : MonoBehaviour
 		AnimateShield();
 	}
 
+	private void AnimateShield()
+	{
+		shieldAnimator.SetBool("swordOut", swordOut);
+	}
+
 	private void SetFreezePosition(int value)
 	{
 		freezePosition = (value != 0);
 		if (freezePosition) { GetCurrentPosition(); }
-	}
-
-	private void FreezePosition()
-	{
-		transform.parent.position = positionBeforeAttack;
 	}
 
 	private void GetCurrentPosition()
@@ -160,13 +153,20 @@ public class PlayerAnimator : MonoBehaviour
 		positionBeforeAttack = transform.parent.position;
 	}
 
-	private void AnimateShield()
+	private void FreezePosition()
 	{
-		shieldAnimator.SetBool("swordOut", swordOut);
+		transform.parent.position = positionBeforeAttack;
 	}
 
 	public static PlayerState GetPlayerState()
 	{
 		return playerState;
+	}
+
+	private IEnumerator SwitchToAttackStance(float time)
+	{
+		playerState = PlayerState.attacking;
+		yield return new WaitForSeconds(time);
+		playerState = PlayerState.battleStance;
 	}
 }
