@@ -125,6 +125,8 @@ ModelImporter:
     7400016: SpinLeft
     7400018: RollForward
     7400020: SpinRight
+    7400022: SwordBasicAttack
+    7400024: SwordTopDown
     9500000: //RootNode
     13700000: Body
   materials:
@@ -140,101 +142,15 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'BattleStance' has import animation warnings
-      that might lower retargeting quality:\n\t'Chest' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\nClip 'RollForward' has
-      import animation warnings that might lower retargeting quality:\n\t'Chest' is
-      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Middle_Finger_1_R'
-      has translation animation that will be discarded.\n\t'Ring_Finger_1_R' has translation
-      animation that will be discarded.\n\t'Index_Finger_1_R' has translation animation
-      that will be discarded.\n\t'Pinky_1_R' has translation animation that will be
-      discarded.\n\t'Lower_Leg_R' has scale animation that will be discarded.\n\nClip
-      'Run' has import animation warnings that might lower retargeting quality:\n\t'Chest'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Lower_Leg_L'
-      has scale animation that will be discarded.\n\t'Foot_L' has scale animation
-      that will be discarded.\n\t'Lower_Leg_R' has scale animation that will be discarded.\n\t'Foot_R'
-      has scale animation that will be discarded.\n\nClip 'SpinRight' has import animation
-      warnings that might lower retargeting quality:\n\t'Chest' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\nClip 'Walk'
-      has import animation warnings that might lower retargeting quality:\n\t'Chest'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Foot_L'
+    animationImportWarnings: "\nClip 'RollForward' has import animation warnings that
+      might lower retargeting quality:\n\t'Lower_Leg_R' has scale animation that will
+      be discarded.\n\nClip 'Run' has import animation warnings that might lower retargeting
+      quality:\n\t'Lower_Leg_L' has scale animation that will be discarded.\n\t'Foot_L'
       has scale animation that will be discarded.\n\t'Foot_R' has scale animation
-      that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Default
-      Take':\n\tRetargeting quality is good. No significant differences with original
-      animation were found.\n\nRetargeting quality report for clip 'BattleStance':\n\tLeftUpperArm
-      average position error 11.6 mm and maximum position error 14.1 mm at time 1:
-      8 (74.4%) Frame 32\n\tLeftLowerArm average position error 8.1 mm and maximum
-      position error 11.6 mm at time 1: 8 (74.4%) Frame 32\n\tLeftHand average position
-      error 8.5 mm and maximum position error 12.3 mm at time 1: 8 (74.4%) Frame 32\n\tRightUpperArm
-      average position error 17.5 mm and maximum position error 21.2 mm at time 0:
-      0 (0.0%) Frame 0\n\tRightLowerArm average position error 11.2 mm and maximum
-      position error 14.1 mm at time 0: 0 (0.0%) Frame 0\n\tRightHand average position
-      error 1.9 mm and maximum position error 3.5 mm at time 0:11 (25.6%) Frame 11\n\tHead
-      average position error 7.4 mm and maximum position error 11.3 mm at time 0:
-      0 (0.0%) Frame 0\n\nRetargeting quality report for clip 'DrawSword':\n\tLeftUpperArm
-      average position error 10.2 mm and maximum position error 10.2 mm at time 1:
-      2 (100.0%) Frame 26\n\tLeftLowerArm average position error 8.3 mm and maximum
-      position error 11.3 mm at time 0:21 (80.8%) Frame 21\n\tLeftHand average position
-      error 2.4 mm and maximum position error 5.1 mm at time 0: 8 (30.8%) Frame 8\n\tRightUpperArm
-      average position error 21.2 mm and maximum position error 21.2 mm at time 0:18
-      (69.2%) Frame 18\n\tRightLowerArm average position error 13.6 mm and maximum
-      position error 16.6 mm at time 1: 0 (92.3%) Frame 24\n\tRightHand average position
-      error 4.8 mm and maximum position error 9.7 mm at time 0: 8 (30.8%) Frame 8\n\tHead
-      average position error 11.3 mm and maximum position error 11.3 mm at time 0:19
-      (73.1%) Frame 19\n\nRetargeting quality report for clip 'Idle':\n\tRetargeting
-      quality is good. No significant differences with original animation were found.\n\nRetargeting
-      quality report for clip 'IdleFingerplay':\n\tRetargeting quality is good. No
-      significant differences with original animation were found.\n\nRetargeting quality
-      report for clip 'PutSwordBack':\n\tRetargeting quality is good. No significant
-      differences with original animation were found.\n\nRetargeting quality report
-      for clip 'RollForward':\n\tRightLowerLeg average position error 0.2 mm and maximum
-      position error 5.2 mm at time 0:21 (25.6%) Frame 21\n\tLeftLowerArm average
-      position error 2.6 mm and maximum position error 8.9 mm at time 2: 5 (64.6%)
-      Frame 53\n\tRightLowerArm average position error 3.6 mm and maximum position
-      error 12.1 mm at time 2:14 (75.6%) Frame 62\n\nRetargeting quality report for
-      clip 'Run':\n\tLeftUpperArm average position error 10.2 mm and maximum position
-      error 16.5 mm at time 0: 8 (50.0%) Frame 8\n\tLeftLowerArm average position
-      error 7.6 mm and maximum position error 14.9 mm at time 0: 8 (50.0%) Frame 8\n\tLeftHand
-      average position error 6.3 mm and maximum position error 16.1 mm at time 0:
-      8 (50.0%) Frame 8\n\tRightUpperArm average position error 10.2 mm and maximum
-      position error 16.5 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm average
-      position error 7.8 mm and maximum position error 14.9 mm at time 0: 0 (0.0%)
-      Frame 0\n\tRightHand average position error 6.8 mm and maximum position error
-      16.1 mm at time 0: 0 (0.0%) Frame 0\n\tHead average position error 1.9 mm and
-      maximum position error 2.9 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality
-      report for clip 'SpinLeft':\n\tLeftUpperArm average position error 10.2 mm and
-      maximum position error 10.2 mm at time 0:22 (71.0%) Frame 22\n\tLeftLowerArm
-      average position error 5.9 mm and maximum position error 6.3 mm at time 0:11
-      (35.5%) Frame 11\n\tLeftHand average position error 3.8 mm and maximum position
-      error 5.1 mm at time 1: 3 (87.1%) Frame 27\n\tRightUpperArm average position
-      error 21.2 mm and maximum position error 21.2 mm at time 0:17 (54.8%) Frame
-      17\n\tRightLowerArm average position error 17.0 mm and maximum position error
-      22.8 mm at time 0:11 (35.5%) Frame 11\n\tRightHand average position error 11.5
-      mm and maximum position error 21.2 mm at time 0:15 (48.4%) Frame 15\n\tHead
-      average position error 11.3 mm and maximum position error 11.3 mm at time 0:17
-      (54.8%) Frame 17\n\nRetargeting quality report for clip 'SpinRight':\n\tLeftUpperArm
-      average position error 7.9 mm and maximum position error 10.2 mm at time 0:
-      0 (0.0%) Frame 0\n\tLeftLowerArm average position error 4.6 mm and maximum position
-      error 6.2 mm at time 0:12 (38.7%) Frame 12\n\tLeftHand average position error
-      2.6 mm and maximum position error 5.1 mm at time 0: 0 (0.0%) Frame 0\n\tRightUpperArm
-      average position error 16.4 mm and maximum position error 21.2 mm at time 0:14
-      (45.2%) Frame 14\n\tRightLowerArm average position error 13.2 mm and maximum
-      position error 22.6 mm at time 0: 8 (25.8%) Frame 8\n\tRightHand average position
-      error 10.6 mm and maximum position error 21.2 mm at time 0:10 (32.3%) Frame
-      10\n\tHead average position error 8.8 mm and maximum position error 11.3 mm
-      at time 0:19 (61.3%) Frame 19\n\nRetargeting quality report for clip 'Walk':\n\tRightLowerLeg
-      average position error 0.2 mm and maximum position error 1.2 mm at time 0:11
-      (45.8%) Frame 11\n\tLeftUpperArm average position error 4.0 mm and maximum position
-      error 6.4 mm at time 0: 0 (0.0%) Frame 0\n\tLeftLowerArm average position error
-      2.2 mm and maximum position error 4.3 mm at time 0:12 (50.0%) Frame 12\n\tLeftHand
-      average position error 1.1 mm and maximum position error 3.0 mm at time 0:12
-      (50.0%) Frame 12\n\tRightUpperArm average position error 4.0 mm and maximum
-      position error 6.4 mm at time 0:12 (50.0%) Frame 12\n\tRightLowerArm average
-      position error 2.2 mm and maximum position error 4.3 mm at time 0: 0 (0.0%)
-      Frame 0\n\tRightHand average position error 1.2 mm and maximum position error
-      3.0 mm at time 0: 0 (0.0%) Frame 0\n\tHead average position error 0.8 mm and
-      maximum position error 1.3 mm at time 0:12 (50.0%) Frame 12\n"
+      that will be discarded.\n\nClip 'Walk' has import animation warnings that might
+      lower retargeting quality:\n\t'Foot_L' has scale animation that will be discarded.\n\t'Foot_R'
+      has scale animation that will be discarded.\n"
+    animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
     animationRotationError: 0.5
@@ -501,6 +417,62 @@ ModelImporter:
       takeName: SpinRight
       firstFrame: 0
       lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SwordBasicAttack
+      takeName: SwordBasicAttack
+      firstFrame: 0
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SwordTopDown
+      takeName: SwordTopDown
+      firstFrame: 0
+      lastFrame: 35
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
