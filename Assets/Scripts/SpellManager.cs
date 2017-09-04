@@ -17,9 +17,9 @@ public class SpellManager : MonoBehaviour
 		spellsPrefabs = new Dictionary<string, SkillButton>();
 		SkillButton[] skillButtons = FindObjectsOfType<SkillButton>();
 
-		foreach (SkillButton spell in skillButtons)
+		foreach (SkillButton spellButton in skillButtons)
 		{
-			spellsPrefabs.Add(spell.key, spell);
+			spellsPrefabs.Add(spellButton.key, spellButton);
 		}
 
 		player = FindObjectOfType<Player>().transform;

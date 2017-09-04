@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
+public enum Weapon { SwordAndShield, Greatsword, Spear, FistWeapons }
+
 public class Player : MonoBehaviour 
 {
 	public Image manaDisplay;

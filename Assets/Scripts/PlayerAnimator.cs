@@ -118,6 +118,16 @@ public class PlayerAnimator : MonoBehaviour
 		}
 
 		#endregion
+
+		#region Sidesteps
+
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			agent.isStopped = true;
+			anim.SetTrigger("spin");
+		}
+
+		#endregion
 	}
 
 	private void Attack()
