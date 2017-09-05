@@ -37,7 +37,8 @@ public class SkillButton : MonoBehaviour
 			return;
 		}
 
-		GameObject spell = Instantiate(particlePrefab, player.transform.position + offset, Quaternion.identity, particleHolder);
+		Quaternion rot = skillLauncher.rotation;
+		GameObject spell = Instantiate(particlePrefab, skillLauncher.position + offset, rot, skillLauncher);
 
 		Vector3 direction = new Vector3();
 		RaycastHit hit;
