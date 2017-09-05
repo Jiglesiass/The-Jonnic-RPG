@@ -1,9 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// TODO: Add T, 1, 2 and 3. 
-//		 Make sure all SkillButton have they "key" value assigned in the inspector (maybe assign it by default through code just to make sure)
-//		 Check it works
+// TODO: Add T, 1, 2 and 3. ( T = Dodge // 1, 2 and 3 = Special Weapons )
 //		 Add damage logic
 public class SpellManager : MonoBehaviour
 {
@@ -29,6 +27,14 @@ public class SpellManager : MonoBehaviour
 
 	private void Update()
 	{
+		if (PlayerAnimator.GetPlayerState() == PlayerState.battleStance)
+		{
+			HandleInput();
+		}
+	}
+
+	private void HandleInput()
+	{
 		if (Input.GetKeyDown(KeyCode.Q))
 		{
 			CastSpell("Q", "q");
@@ -53,6 +59,14 @@ public class SpellManager : MonoBehaviour
 		if (!spellsPrefabs.TryGetValue(keyLetter, out skillButton))
 		{
 			Debug.LogError(keyLetter + " SkillButton not found in dictionary");
+		}
+		else if (player.Mana < skillButton.spellAtributes.manaCost)
+		{
+			Debug.Log("Not enough mana");
+		}
+		else if (skillButton.IsInCD())
+		{
+			Debug.Log("Wait for cooldown!");
 		}
 		else
 		{

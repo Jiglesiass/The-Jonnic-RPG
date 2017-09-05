@@ -14,14 +14,23 @@ public class SkillButton : MonoBehaviour
 	private bool inCD;
 	private Transform particleHolder;
 	private Transform skillLauncher;
+	private PlayerAnimator playerAnim;
 
 	private void Awake()
 	{
 		player = FindObjectOfType<Player>();
+		playerAnim = FindObjectOfType<PlayerAnimator>();
+
 		particleHolder = GameObject.Find("Particles").transform;
 		Assert.IsNotNull(particleHolder, "Particles GO not found. Please create it.");
+
 		skillLauncher = GameObject.Find("SkillLauncher").transform;
 		Assert.IsNotNull(skillLauncher, "SkillLauncher GO not found. Please create it.");
+	}
+
+	public bool IsInCD()
+	{
+		return inCD;
 	}
 
 	public void Launch(Transform parent)
@@ -31,11 +40,10 @@ public class SkillButton : MonoBehaviour
 			Debug.Log(name + "is in cooldown");
 			return;
 		}
-		if (player.Mana <= spellAtributes.manaCost)
-		{
-			Debug.Log("Not enough mana");
-			return;
-		}
+
+		playerAnim.StopAndTurnToMousePosition();
+		StartCoroutine(playerAnim.StopAgent(0.3f));
+		StartCoroutine(playerAnim.SwitchToAttackStance(0.3f));
 
 		Quaternion rot = skillLauncher.rotation;
 		GameObject spell = Instantiate(particlePrefab, skillLauncher.position + offset, rot, skillLauncher);

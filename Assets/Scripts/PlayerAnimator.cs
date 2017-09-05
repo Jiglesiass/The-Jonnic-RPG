@@ -5,6 +5,8 @@ using System.Collections;
 
 public enum PlayerState { attacking, idle, battleStance }
 
+// TODO: Refactor this fucking crap
+
 public class PlayerAnimator : MonoBehaviour
 {
 	public Transform weapon;
@@ -104,8 +106,7 @@ public class PlayerAnimator : MonoBehaviour
 
 		if (Input.GetMouseButton(0) && (playerState != PlayerState.attacking && playerState == PlayerState.battleStance))
 		{
-			IEnumerator coroutine = SwitchToAttackStance(0.5f);
-			StartCoroutine(coroutine);
+			StartCoroutine(SwitchToAttackStance(0.2f));
 			Attack();
 		}
 		else if (Input.GetMouseButtonUp(0) && playerState == PlayerState.attacking)
@@ -132,13 +133,19 @@ public class PlayerAnimator : MonoBehaviour
 
 	private void Attack()
 	{
+		StopAndTurnToMousePosition();
+		anim.SetTrigger("attack");
+	}
+
+	public void StopAndTurnToMousePosition()
+	{
 		agent.destination = transform.parent.position;
 		RaycastHit hit;
+
 		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f))
 		{
 			transform.parent.DOLookAt(hit.point, 0.15f, AxisConstraint.Y);
 		}
-		anim.SetTrigger("attack");
 	}
 
 	private void ChangeWeaponParent(Transform newParent)
@@ -182,16 +189,22 @@ public class PlayerAnimator : MonoBehaviour
 		return playerState;
 	}
 
-	private IEnumerator SwitchToAttackStance(float time)
+	public IEnumerator SwitchToAttackStance(float time)
 	{
 		playerState = PlayerState.attacking;
 		yield return new WaitForSeconds(time);
 		playerState = PlayerState.battleStance;
 	}
 
+	public IEnumerator StopAgent(float time)
+	{
+		agent.isStopped = true;
+		yield return new WaitForSeconds(time);
+		agent.isStopped = false;
+	}
+
 	public void SetAnimatorTrigger(string parameterName)
 	{
-		Debug.Log("Set parameter: " + parameterName);
 		anim.SetTrigger(parameterName);
 	}
 }
