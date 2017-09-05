@@ -11,4 +11,20 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Skill Particle Prefabs
   m_EditorClassIdentifier: Assembly-CSharp::SkillParticlePrefabs
-  skillParticlesList: []
+  skillParticlesList:
+  - q: {fileID: 1316725634892206, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
+    e: {fileID: 0}
+    w: {fileID: 0}
+    r: {fileID: 0}
+  - q: {fileID: 0}
+    e: {fileID: 0}
+    w: {fileID: 0}
+    r: {fileID: 0}
+  - q: {fileID: 0}
+    e: {fileID: 0}
+    w: {fileID: 0}
+    r: {fileID: 0}
+  - q: {fileID: 0}
+    e: {fileID: 0}
+    w: {fileID: 0}
+    r: {fileID: 0}

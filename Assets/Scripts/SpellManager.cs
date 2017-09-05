@@ -10,7 +10,8 @@ public class SpellManager : MonoBehaviour
 	public static Dictionary<string, SkillButton> spellsPrefabs;
 	public float globalCooldown = 1f;
 
-	private Transform player;
+	private Player player;
+	private PlayerAnimator playerAnim;
 
 	private void Awake()
 	{
@@ -22,60 +23,41 @@ public class SpellManager : MonoBehaviour
 			spellsPrefabs.Add(spellButton.key, spellButton);
 		}
 
-		player = FindObjectOfType<Player>().transform;
+		player = FindObjectOfType<Player>();
+		playerAnim = FindObjectOfType<PlayerAnimator>();
 	}
 
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Q))
 		{
-			Debug.Log("Input received");
-			SkillButton skillButton;
-			if (!spellsPrefabs.TryGetValue("Q", out skillButton))
-			{
-				Debug.LogError("Q SkillButton not found in dictionary");
-			}
-			else
-			{
-				Debug.Log(skillButton + "Launched");
-				skillButton.Launch(player);
-			}
+			CastSpell("Q", "q");
 		}
 		if (Input.GetKeyDown(KeyCode.W))
 		{
-			SkillButton skillButton;
-			if (!spellsPrefabs.TryGetValue("W", out skillButton))
-			{
-				Debug.LogError("W SkillButton not found in dictionary");
-			}
-			else
-			{
-				skillButton.Launch(player);
-			}
+			CastSpell("W", "w");
 		}
 		if (Input.GetKeyDown(KeyCode.E))
 		{
-			SkillButton skillButton;
-			if (!spellsPrefabs.TryGetValue("E", out skillButton))
-			{
-				Debug.LogError("E SkillButton not found in dictionary");
-			}
-			else
-			{
-				skillButton.Launch(player);
-			}
+			CastSpell("E", "e");
 		}
 		if (Input.GetKeyDown(KeyCode.R))
 		{
-			SkillButton skillButton;
-			if (!spellsPrefabs.TryGetValue("R", out skillButton))
-			{
-				Debug.LogError("R SkillButton not found in dictionary");
-			}
-			else
-			{
-				skillButton.Launch(player);
-			}
+			CastSpell("R", "r");
+		}
+	}
+
+	private void CastSpell(string keyLetter, string animatorTriggerName)
+	{
+		SkillButton skillButton;
+		if (!spellsPrefabs.TryGetValue(keyLetter, out skillButton))
+		{
+			Debug.LogError(keyLetter + " SkillButton not found in dictionary");
+		}
+		else
+		{
+			skillButton.Launch(player.transform);
+			playerAnim.SetAnimatorTrigger(animatorTriggerName);
 		}
 	}
 }
