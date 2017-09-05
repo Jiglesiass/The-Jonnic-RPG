@@ -13,12 +13,15 @@ public class SkillButton : MonoBehaviour
 	private Player player;
 	private bool inCD;
 	private Transform particleHolder;
+	private Transform skillLauncher;
 
 	private void Awake()
 	{
 		player = FindObjectOfType<Player>();
 		particleHolder = GameObject.Find("Particles").transform;
 		Assert.IsNotNull(particleHolder, "Particles GO not found. Please create it.");
+		skillLauncher = GameObject.Find("SkillLauncher").transform;
+		Assert.IsNotNull(skillLauncher, "SkillLauncher GO not found. Please create it.");
 	}
 
 	public void Launch(Transform parent)
