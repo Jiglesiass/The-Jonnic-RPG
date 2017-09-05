@@ -192,6 +192,6 @@ public class PlayerAnimator : MonoBehaviour
 	public void SetAnimatorTrigger(string parameterName)
 	{
 		Debug.Log("Set parameter: " + parameterName);
-		//anim.SetTrigger(parameterName);
+		anim.SetTrigger(parameterName);
 	}
 }
