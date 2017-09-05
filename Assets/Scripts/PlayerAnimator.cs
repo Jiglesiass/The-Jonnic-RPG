@@ -112,22 +112,22 @@ public class PlayerAnimator : MonoBehaviour
 		{
 			anim.ResetTrigger("attack");
 		}
-		if (freezePosition)
-		{
-			FreezePosition();
-		}
 
 		#endregion
 
-		#region Sidesteps
+		#region Sidestep
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			agent.isStopped = true;
 			anim.SetTrigger("spin");
 		}
 
 		#endregion
+
+		if (freezePosition)
+		{
+			FreezePosition();
+		}
 	}
 
 	private void Attack()
@@ -152,11 +152,20 @@ public class PlayerAnimator : MonoBehaviour
 		shieldAnimator.SetBool("swordOut", swordOut);
 	}
 
+	#region FreezePosition
+
 	private void SetFreezePosition(int value)
 	{
 		freezePosition = (value != 0);
 		if (freezePosition) { GetCurrentPosition(); }
 	}
+	public void SetFreezePosition(bool value, float time)
+	{
+		freezePosition = value;
+		if (freezePosition) { GetCurrentPosition(); }
+	}
+
+	#endregion
 
 	private void GetCurrentPosition()
 	{
@@ -178,5 +187,11 @@ public class PlayerAnimator : MonoBehaviour
 		playerState = PlayerState.attacking;
 		yield return new WaitForSeconds(time);
 		playerState = PlayerState.battleStance;
+	}
+
+	public void SetAnimatorTrigger(string parameterName)
+	{
+		Debug.Log("Set parameter: " + parameterName);
+		//anim.SetTrigger(parameterName);
 	}
 }
