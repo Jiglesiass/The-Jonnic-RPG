@@ -417,13 +417,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: Q
-  particlePrefab: {fileID: 100010, guid: b32f835e658efa1419ad0ae6b033b81f, type: 2}
-  offset: {x: 0, y: 1, z: 1}
+  particlePrefab: {fileID: 1381391532681684, guid: 98502ced0d26a484085e60c79c0564ac,
+    type: 2}
+  offset: {x: 0, y: 0.5, z: 0.5}
   spellAtributes:
     damage: 25
     manaCost: 10
-    projectileSpeed: 25
-    cooldown: 0.5
+    projectileSpeed: 0
+    cooldown: 2
     level: 1
 --- !u!114 &140248691
 MonoBehaviour:
@@ -609,35 +610,35 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 545903825}
     m_Modifications:
-    - target: {fileID: 4469476445338398, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
+    - target: {fileID: 4092425477656816, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
       propertyPath: m_LocalPosition.x
       value: -9.89
       objectReference: {fileID: 0}
-    - target: {fileID: 4469476445338398, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
+    - target: {fileID: 4092425477656816, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4469476445338398, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
+    - target: {fileID: 4092425477656816, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
       propertyPath: m_LocalPosition.z
       value: 14.8
       objectReference: {fileID: 0}
-    - target: {fileID: 4469476445338398, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
+    - target: {fileID: 4092425477656816, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4469476445338398, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
+    - target: {fileID: 4092425477656816, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4469476445338398, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
+    - target: {fileID: 4092425477656816, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 4469476445338398, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
+    - target: {fileID: 4092425477656816, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 4469476445338398, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
+    - target: {fileID: 4092425477656816, guid: 98502ced0d26a484085e60c79c0564ac, type: 2}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
@@ -1314,7 +1315,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &1374927179 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4469476445338398, guid: 98502ced0d26a484085e60c79c0564ac,
+  m_PrefabParentObject: {fileID: 4092425477656816, guid: 98502ced0d26a484085e60c79c0564ac,
     type: 2}
   m_PrefabInternal: {fileID: 382330300}
 --- !u!1001 &1664289547

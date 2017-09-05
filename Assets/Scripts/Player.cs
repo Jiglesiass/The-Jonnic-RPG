@@ -37,11 +37,6 @@ public class Player : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Q))
-		{
-			ConsumeMana(10f);
-		}
-
 		ManaRegen();
 	}
 
