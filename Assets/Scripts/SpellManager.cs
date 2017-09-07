@@ -10,6 +10,8 @@ public class SpellManager : MonoBehaviour
 
 	private Player player;
 	private PlayerAnimator playerAnim;
+	private PlayerMovement playerMov;
+	private ShieldDash shieldDash;
 
 	private void Awake()
 	{
@@ -23,6 +25,7 @@ public class SpellManager : MonoBehaviour
 
 		player = FindObjectOfType<Player>();
 		playerAnim = FindObjectOfType<PlayerAnimator>();
+		shieldDash = FindObjectOfType<ShieldDash>();
 	}
 
 	private void Update()

@@ -6,6 +6,8 @@ public enum Weapon { SwordAndShield, Greatsword, Spear, FistWeapons }
 
 public class Player : MonoBehaviour 
 {
+	public static Weapon weapon;
+
 	public Image manaDisplay;
 	public Image healthDisplay;
 
@@ -17,6 +19,9 @@ public class Player : MonoBehaviour
 	private float currentHealth;
 	private float currentMana;
 
+	private float manaRegenPerSec = 5f;
+
+
 	public float Mana
 	{
 		get { return currentMana; }
@@ -26,8 +31,6 @@ public class Player : MonoBehaviour
 	{
 		get { return currentHealth; }
 	}
-
-	private float manaRegenPerSec = 5f;
 
 	private void Start()
 	{

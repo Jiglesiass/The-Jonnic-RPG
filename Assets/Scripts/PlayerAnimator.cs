@@ -5,7 +5,7 @@ using System.Collections;
 
 public enum PlayerState { attacking, idle, battleStance }
 
-// TODO: Refactor this fucking crap
+// TODO: Refactor this crap
 
 public class PlayerAnimator : MonoBehaviour
 {
@@ -54,6 +54,7 @@ public class PlayerAnimator : MonoBehaviour
         anim.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
 
 		#region DrawSheathSword
+
 		if (Input.GetKeyDown(KeyCode.V))
 		{
 			playerState = (swordOut) ? PlayerState.idle : PlayerState.battleStance;
@@ -100,6 +101,7 @@ public class PlayerAnimator : MonoBehaviour
                 }
             }
         }
+
 		#endregion
 
 		#region BasicAttack
@@ -172,16 +174,16 @@ public class PlayerAnimator : MonoBehaviour
 		if (freezePosition) { GetCurrentPosition(); }
 	}
 
+	private void FreezePosition()
+	{
+		transform.parent.position = positionBeforeAttack;
+	}
+
 	#endregion
 
 	private void GetCurrentPosition()
 	{
 		positionBeforeAttack = transform.parent.position;
-	}
-
-	private void FreezePosition()
-	{
-		transform.parent.position = positionBeforeAttack;
 	}
 
 	public static PlayerState GetPlayerState()

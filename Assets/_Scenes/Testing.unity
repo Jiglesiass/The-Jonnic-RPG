@@ -328,13 +328,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: W
-  particlePrefab: {fileID: 100010, guid: b32f835e658efa1419ad0ae6b033b81f, type: 2}
-  offset: {x: 0, y: 1, z: 1}
+  particlePrefab: {fileID: 1047006555165990, guid: 4fe6a9fa89d0ff74e837518e1135095d,
+    type: 2}
+  offset: {x: 0, y: 0, z: 0}
   spellAtributes:
     damage: 25
     manaCost: 10
-    projectileSpeed: 25
-    cooldown: 0.5
+    projectileSpeed: 0
+    cooldown: 2
+    castingTime: 0.6
+    particleDelay: 0
     level: 1
 --- !u!114 &131660055
 MonoBehaviour:
@@ -425,6 +428,8 @@ MonoBehaviour:
     manaCost: 10
     projectileSpeed: 0
     cooldown: 2
+    castingTime: 0.3
+    particleDelay: 0
     level: 1
 --- !u!114 &140248691
 MonoBehaviour:
@@ -501,6 +506,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a10b441f40c10d42ba6d237b6763f0a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &198017943 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1300668249665660, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+    type: 2}
+  m_PrefabInternal: {fileID: 973548905}
 --- !u!1 &345750763
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,13 +831,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: E
-  particlePrefab: {fileID: 100010, guid: b32f835e658efa1419ad0ae6b033b81f, type: 2}
-  offset: {x: 0, y: 1, z: 1}
+  particlePrefab: {fileID: 1076366816565260, guid: 94d85c5d942b61f4c9c1ac530abf8780,
+    type: 2}
+  offset: {x: 0, y: 0, z: -0.3}
   spellAtributes:
     damage: 25
     manaCost: 10
-    projectileSpeed: 25
-    cooldown: 0.5
+    projectileSpeed: 0
+    cooldown: 2
+    castingTime: 0.3
+    particleDelay: 0
     level: 1
 --- !u!114 &714884164
 MonoBehaviour:
@@ -1043,6 +1056,138 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 23670057428458964, guid: d93659a8e7a30f743a48d0c9a6a8b030,
     type: 2}
   m_PrefabInternal: {fileID: 1953542455}
+--- !u!1001 &973548905
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4851972288521398, guid: 5e12ec8d5ef7adb44aba998d514e79da, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851972288521398, guid: 5e12ec8d5ef7adb44aba998d514e79da, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851972288521398, guid: 5e12ec8d5ef7adb44aba998d514e79da, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851972288521398, guid: 5e12ec8d5ef7adb44aba998d514e79da, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851972288521398, guid: 5e12ec8d5ef7adb44aba998d514e79da, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851972288521398, guid: 5e12ec8d5ef7adb44aba998d514e79da, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851972288521398, guid: 5e12ec8d5ef7adb44aba998d514e79da, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851972288521398, guid: 5e12ec8d5ef7adb44aba998d514e79da, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 198142397134924202, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1419401373
+      objectReference: {fileID: 0}
+    - target: {fileID: 198584662993899956, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: randomSeed
+      value: 283360702
+      objectReference: {fileID: 0}
+    - target: {fileID: 198076190806488058, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: randomSeed
+      value: -333072929
+      objectReference: {fileID: 0}
+    - target: {fileID: 198616137900917592, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: randomSeed
+      value: 982787630
+      objectReference: {fileID: 0}
+    - target: {fileID: 198914480124681352, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: randomSeed
+      value: 135375994
+      objectReference: {fileID: 0}
+    - target: {fileID: 198021398279969004, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: randomSeed
+      value: -583387995
+      objectReference: {fileID: 0}
+    - target: {fileID: 198166600149637494, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198021398279969004, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198548958851264904, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198433404967833666, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198616137900917592, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198811069328274570, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198142397134924202, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198584662993899956, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198415833929303922, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198076190806488058, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198870090611341710, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198914480124681352, guid: 5e12ec8d5ef7adb44aba998d514e79da,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5e12ec8d5ef7adb44aba998d514e79da, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1001933391
 Prefab:
   m_ObjectHideFlags: 0
@@ -1514,13 +1659,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: R
-  particlePrefab: {fileID: 100010, guid: b32f835e658efa1419ad0ae6b033b81f, type: 2}
-  offset: {x: 0, y: 1, z: 1}
+  particlePrefab: {fileID: 198017943}
+  offset: {x: 0, y: -0.5, z: 0}
   spellAtributes:
     damage: 25
     manaCost: 10
-    projectileSpeed: 25
-    cooldown: 0.5
+    projectileSpeed: 0
+    cooldown: 2
+    castingTime: 0.3
+    particleDelay: 0.4
     level: 1
 --- !u!114 &1934387746
 MonoBehaviour:

@@ -42,28 +42,27 @@ public class SkillButton : MonoBehaviour
 		}
 
 		playerAnim.StopAndTurnToMousePosition();
-		StartCoroutine(playerAnim.StopAgent(0.3f));
-		StartCoroutine(playerAnim.SwitchToAttackStance(0.3f));
-
-		Quaternion rot = skillLauncher.rotation;
-		GameObject spell = Instantiate(particlePrefab, skillLauncher.position + offset, rot, skillLauncher);
-
-		Vector3 direction = new Vector3();
-		RaycastHit hit;
-		int layerMask = 1 << 8;
-		float speed = spellAtributes.projectileSpeed;
-
-		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, layerMask))
-		{
-			direction = (hit.point - player.transform.position).normalized;
-		}
-		if (speed > 0f)
-		{
-			spell.GetComponent<Rigidbody>().velocity = direction * speed;
-		}
-
+		StartCoroutine(playerAnim.StopAgent(spellAtributes.castingTime));
+		StartCoroutine(playerAnim.SwitchToAttackStance(spellAtributes.castingTime));
 		player.ConsumeMana(spellAtributes.manaCost);
 		StartCoroutine("Cooldown");
+
+		StartCoroutine(LaunchParticle(spellAtributes.particleDelay));
+
+
+		//Vector3 direction = new Vector3();
+		//RaycastHit hit;
+		//int layerMask = 1 << 8;
+		//float speed = spellAtributes.projectileSpeed;
+
+		//if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, layerMask))
+		//{
+		//	direction = (hit.point - player.transform.position).normalized;
+		//}
+		//if (speed > 0f)
+		//{
+		//	spell.GetComponent<Rigidbody>().velocity = direction * speed;
+		//}
 	}
 
 	[Serializable]
@@ -71,8 +70,10 @@ public class SkillButton : MonoBehaviour
 	{
 		public float damage = 10f;
 		public float manaCost = 10f;
-		public float projectileSpeed = 1f;
-		public float cooldown = 5f;
+		public float projectileSpeed = 0f;
+		public float cooldown = 2f;
+		public float castingTime = 0.3f;
+		public float particleDelay = 0f;
 		[Range(1, 10)]
 		public int level = 1;
 	}
@@ -82,6 +83,15 @@ public class SkillButton : MonoBehaviour
 		inCD = true;
 		yield return new WaitForSeconds(spellAtributes.cooldown);
 		inCD = false;
+	}
+
+	private IEnumerator LaunchParticle(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+
+		Quaternion rot = skillLauncher.rotation;
+		GameObject spell = Instantiate(particlePrefab, skillLauncher.position, rot, skillLauncher);
+		spell.transform.localPosition += offset;
 	}
 }
 
