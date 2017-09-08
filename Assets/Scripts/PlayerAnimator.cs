@@ -141,12 +141,12 @@ public class PlayerAnimator : MonoBehaviour
 
 	public void StopAndTurnToMousePosition()
 	{
-		agent.destination = transform.parent.position;
+		agent.destination = transform.position;
 		RaycastHit hit;
 
 		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f))
 		{
-			transform.parent.DOLookAt(hit.point, 0.15f, AxisConstraint.Y);
+			transform.DOLookAt(hit.point, 0.15f, AxisConstraint.Y);
 		}
 	}
 
