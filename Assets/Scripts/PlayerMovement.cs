@@ -23,4 +23,9 @@ public class PlayerMovement : MonoBehaviour
 			}
 		}
 	}
+
+	public void ResetAgentDestination()
+	{
+		agent.SetDestination(transform.position);
+	}
 }
