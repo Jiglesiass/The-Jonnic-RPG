@@ -8,23 +8,23 @@ public class Player : MonoBehaviour
 {
 	public static Weapon weapon;
 
-	public Image manaDisplay;
+	public Image powerDisplay;
 	public Image healthDisplay;
+
+
+	private Image lipFillImage;
 
 	[SerializeField]
 	private float maxHealth;
 	[SerializeField]
-	private float maxMana;
+	private float maxPower;
 
 	private float currentHealth;
-	private float currentMana;
+	private float currentPower;
 
-	private float manaRegenPerSec = 5f;
-
-
-	public float Mana
+	public float Power
 	{
-		get { return currentMana; }
+		get { return currentPower; }
 	}
 
 	public float Health
@@ -34,36 +34,24 @@ public class Player : MonoBehaviour
 
 	private void Start()
 	{
+		lipFillImage = healthDisplay.transform.parent.GetChild(0).GetComponent<Image>();
 		currentHealth = maxHealth;
-		currentMana = maxMana;
-	}
-
-	private void Update()
-	{
-		ManaRegen();
+		currentPower = 0f;
 	}
 
 	public void TakeDamage (float amount)
 	{
 		currentHealth -= amount;
-		healthDisplay.fillAmount = currentHealth / maxHealth;
-		healthDisplay.transform.parent.GetChild(0).GetComponent<Image>().fillAmount = healthDisplay.fillAmount;
+		float targetFillAmount = currentHealth / maxHealth;
+
+		DOTween.To(() => healthDisplay.fillAmount, x => healthDisplay.fillAmount = x, targetFillAmount, 0.3f);
+		DOTween.To(() => lipFillImage.fillAmount, x => lipFillImage.fillAmount = x, targetFillAmount, 1f);
 	}
 
 	public void ConsumeMana(float amount)
 	{
-		currentMana -= amount;
-		manaDisplay.fillAmount = currentMana / maxMana;
-		manaDisplay.transform.parent.GetChild(0).GetComponent<Image>().fillAmount = manaDisplay.fillAmount;
-	}
-
-	private void ManaRegen()
-	{
-		if (currentMana < maxMana)
-		{
-			currentMana += manaRegenPerSec * Time.deltaTime;
-			manaDisplay.fillAmount = currentMana / maxMana;
-			manaDisplay.transform.parent.GetChild(0).GetComponent<Image>().fillAmount = manaDisplay.fillAmount;
-		}
+		currentPower -= amount;
+		powerDisplay.fillAmount = currentPower / maxPower;
+		powerDisplay.transform.parent.GetChild(0).GetComponent<Image>().fillAmount = powerDisplay.fillAmount;
 	}
 }

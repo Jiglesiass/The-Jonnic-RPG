@@ -1,7 +1,9 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.UI;
 
 public class SkillButton : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class SkillButton : MonoBehaviour
 	private Transform particleHolder;
 	private Transform skillLauncher;
 	private PlayerAnimator playerAnim;
+	private Image cooldownFill;
 
 	private void Awake()
 	{
@@ -26,6 +29,14 @@ public class SkillButton : MonoBehaviour
 
 		skillLauncher = GameObject.Find("SkillLauncher").transform;
 		Assert.IsNotNull(skillLauncher, "SkillLauncher GO not found. Please create it.");
+
+		cooldownFill = transform.GetChild(0).GetComponent<Image>();
+		Assert.IsNotNull(cooldownFill, "cooldownFill Image not found.");
+	}
+
+	private void Start()
+	{
+		cooldownFill.fillAmount = 0f;
 	}
 
 	public bool IsInCD()
@@ -35,41 +46,24 @@ public class SkillButton : MonoBehaviour
 
 	public void Launch(Transform parent)
 	{
-		if (inCD)
-		{
-			Debug.Log(name + "is in cooldown");
-			return;
-		}
+		//if (inCD)
+		//{
+		//	Debug.Log(name + "is in cooldown");
+		//	return;
+		//}
 
 		playerAnim.StopAndTurnToMousePosition();
 		StartCoroutine(playerAnim.StopAgent(spellAtributes.castingTime));
 		StartCoroutine(playerAnim.SwitchToAttackStance(spellAtributes.castingTime));
-		player.ConsumeMana(spellAtributes.manaCost);
 		StartCoroutine("Cooldown");
 
 		StartCoroutine(LaunchParticle(spellAtributes.particleDelay));
-
-
-		//Vector3 direction = new Vector3();
-		//RaycastHit hit;
-		//int layerMask = 1 << 8;
-		//float speed = spellAtributes.projectileSpeed;
-
-		//if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, layerMask))
-		//{
-		//	direction = (hit.point - player.transform.position).normalized;
-		//}
-		//if (speed > 0f)
-		//{
-		//	spell.GetComponent<Rigidbody>().velocity = direction * speed;
-		//}
 	}
 
 	[Serializable]
 	public class SpellAttributes
 	{
 		public float damage = 10f;
-		public float manaCost = 10f;
 		public float projectileSpeed = 0f;
 		public float cooldown = 2f;
 		public float castingTime = 0.3f;
@@ -81,6 +75,8 @@ public class SkillButton : MonoBehaviour
 	private IEnumerator Cooldown()
 	{
 		inCD = true;
+		cooldownFill.fillAmount = 1f;
+		cooldownFill.DOFillAmount(0f, spellAtributes.cooldown);
 		yield return new WaitForSeconds(spellAtributes.cooldown);
 		inCD = false;
 	}
