@@ -46,12 +46,6 @@ public class SkillButton : MonoBehaviour
 
 	public void Launch(Transform parent)
 	{
-		//if (inCD)
-		//{
-		//	Debug.Log(name + "is in cooldown");
-		//	return;
-		//}
-
 		playerAnim.StopAndTurnToMousePosition();
 		StartCoroutine(playerAnim.StopAgent(spellAtributes.castingTime));
 		StartCoroutine(playerAnim.SwitchToAttackStance(spellAtributes.castingTime));
@@ -79,6 +73,18 @@ public class SkillButton : MonoBehaviour
 		cooldownFill.DOFillAmount(0f, spellAtributes.cooldown);
 		yield return new WaitForSeconds(spellAtributes.cooldown);
 		inCD = false;
+	}
+
+	public IEnumerator GlobalCooldown(float time)
+	{
+		if (!inCD)
+		{
+			inCD = true;
+			cooldownFill.fillAmount = 1f;
+			cooldownFill.DOFillAmount(0f, time);
+			yield return new WaitForSeconds(time);
+			inCD = false;
+		}
 	}
 
 	private IEnumerator LaunchParticle(float delay)
