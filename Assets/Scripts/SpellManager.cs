@@ -12,10 +12,12 @@ public class SpellManager : MonoBehaviour
 	private PlayerAnimator playerAnim;
 	private PlayerMovement playerMov;
 
+	private SkillButton[] skillButtons;
+
 	private void Awake()
 	{
 		spellsPrefabs = new Dictionary<string, SkillButton>();
-		SkillButton[] skillButtons = FindObjectsOfType<SkillButton>();
+		skillButtons = FindObjectsOfType<SkillButton>();
 
 		foreach (SkillButton spellButton in skillButtons)
 		{
@@ -69,6 +71,11 @@ public class SpellManager : MonoBehaviour
 		{
 			skillButton.Launch(player.transform);
 			playerAnim.SetAnimatorTrigger(animatorTriggerName);
+
+			foreach (SkillButton skill in skillButtons)
+			{
+				StartCoroutine(skill.GlobalCooldown(globalCooldown));
+			}
 		}
 	}
 }
