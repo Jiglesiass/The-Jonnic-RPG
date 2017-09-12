@@ -19,8 +19,6 @@ public class SpellManager : MonoBehaviour
 	private PlayerAnimator playerAnim;
 	private PlayerMovement playerMov;
 
-	private SkillButton[] skillButtons;
-
 	private void Awake()
 	{
 		AddParticlesToDictionary();
@@ -92,9 +90,9 @@ public class SpellManager : MonoBehaviour
 			skillButton.Launch(player.transform);
 			playerAnim.SetAnimatorTrigger(animatorTriggerName);
 
-			foreach (SkillButton skill in skillButtons)
+			foreach (var skill in SpellButtons)
 			{
-				StartCoroutine(skill.GlobalCooldown(globalCooldown));
+				StartCoroutine(skill.Value.GlobalCooldown(globalCooldown));
 			}
 		}
 	}
@@ -122,14 +120,11 @@ public class SpellManager : MonoBehaviour
 	private void AddParticlesToDictionary()
 	{
 		SpellButtons.Clear();
-		Debug.Log(SpellButtons.Count);
-		skillButtons = FindObjectsOfType<SkillButton>();
 
-		foreach (SkillButton spellButton in skillButtons)
+		foreach (SkillButton spellButton in FindObjectsOfType<SkillButton>())
 		{
 			SpellButtons.Add(spellButton.key, spellButton);
 		}
-		Debug.Log(SpellButtons.Count);
 	}
 
 	private void InstantiateNewActionBar(GameObject actionBar)
