@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// TODO: Add 1, 2 and 3. (Special Weapons)
-//		 Add damage logic
 public class SpellManager : MonoBehaviour
 {
 	public GameObject shieldActionBar;
@@ -62,19 +60,19 @@ public class SpellManager : MonoBehaviour
 		{
 			SwapActionBar (Weapon.Spear);
 			AddParticlesToDictionary();
-			playerAnim.SwapWeapon(Weapon.Spear);
+			//playerAnim.SwapWeapon(Weapon.Spear);
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha2))
 		{
 			SwapActionBar (Weapon.Greatsword);
 			AddParticlesToDictionary();
-			playerAnim.SwapWeapon(Weapon.Greatsword);
+			//playerAnim.SwapWeapon(Weapon.Greatsword);
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha3))
 		{
 			SwapActionBar (Weapon.FistWeapons);
 			AddParticlesToDictionary();
-			playerAnim.SwapWeapon(Weapon.FistWeapons);
+			//playerAnim.SwapWeapon(Weapon.FistWeapons);
 		}
 	}
 
@@ -105,38 +103,39 @@ public class SpellManager : MonoBehaviour
 	{
 		if (weapon == Weapon.SwordAndShield)
 		{
-			Destroy(currentActionBar);
-			Instantiate(shieldActionBar, canvas);
-			currentActionBar = shieldActionBar;
+			InstantiateNewActionBar(shieldActionBar);
 		}
 		else if (weapon == Weapon.Greatsword)
 		{
-			Destroy(currentActionBar);
-			Instantiate(greatswordActionBar, canvas);
-			currentActionBar = greatswordActionBar;
+			InstantiateNewActionBar(greatswordActionBar);
 		}
 		else if (weapon == Weapon.Spear)
 		{
-			Destroy(currentActionBar);
-			Instantiate(spearActionBar, canvas);
-			currentActionBar = spearActionBar;
+			InstantiateNewActionBar(spearActionBar);
 		}
 		else if (weapon == Weapon.FistWeapons)
 		{
-			Destroy(currentActionBar);
-			Instantiate(fistActionBar, canvas);
-			currentActionBar = fistActionBar;
+			InstantiateNewActionBar(fistActionBar);
 		}
 	}
 
 	private void AddParticlesToDictionary()
 	{
 		SpellButtons.Clear();
+		Debug.Log(SpellButtons.Count);
 		skillButtons = FindObjectsOfType<SkillButton>();
 
 		foreach (SkillButton spellButton in skillButtons)
 		{
 			SpellButtons.Add(spellButton.key, spellButton);
 		}
+		Debug.Log(SpellButtons.Count);
+	}
+
+	private void InstantiateNewActionBar(GameObject actionBar)
+	{
+		Destroy(currentActionBar);
+		GameObject newActionBar = Instantiate(actionBar, canvas);
+		currentActionBar = newActionBar;
 	}
 }
