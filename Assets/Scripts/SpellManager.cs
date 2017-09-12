@@ -5,9 +5,18 @@ using UnityEngine;
 //		 Add damage logic
 public class SpellManager : MonoBehaviour
 {
-	public static Dictionary<string, SkillButton> spellsPrefabs;
+	public GameObject shieldActionBar;
+	public GameObject spearActionBar;
+	public GameObject greatswordActionBar;
+	public GameObject fistActionBar;
+	public RectTransform canvas;
+
 	public float globalCooldown = 1f;
 
+	private Dictionary<string, SkillButton> SpellButtons = new Dictionary<string, SkillButton>();
+	private const string actionBarTag = "ActionBar";
+
+	private GameObject currentActionBar;
 	private Player player;
 	private PlayerAnimator playerAnim;
 	private PlayerMovement playerMov;
@@ -16,16 +25,11 @@ public class SpellManager : MonoBehaviour
 
 	private void Awake()
 	{
-		spellsPrefabs = new Dictionary<string, SkillButton>();
-		skillButtons = FindObjectsOfType<SkillButton>();
-
-		foreach (SkillButton spellButton in skillButtons)
-		{
-			spellsPrefabs.Add(spellButton.key, spellButton);
-		}
+		AddParticlesToDictionary();
 
 		player = FindObjectOfType<Player>();
 		playerAnim = FindObjectOfType<PlayerAnimator>();
+		currentActionBar = GameObject.FindGameObjectWithTag(actionBarTag);
 	}
 
 	private void Update()
@@ -54,12 +58,30 @@ public class SpellManager : MonoBehaviour
 		{
 			CastSpell("R", "r");
 		}
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			SwapActionBar (Weapon.Spear);
+			AddParticlesToDictionary();
+			playerAnim.SwapWeapon(Weapon.Spear);
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			SwapActionBar (Weapon.Greatsword);
+			AddParticlesToDictionary();
+			playerAnim.SwapWeapon(Weapon.Greatsword);
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha3))
+		{
+			SwapActionBar (Weapon.FistWeapons);
+			AddParticlesToDictionary();
+			playerAnim.SwapWeapon(Weapon.FistWeapons);
+		}
 	}
 
 	private void CastSpell(string keyLetter, string animatorTriggerName)
 	{
 		SkillButton skillButton;
-		if (!spellsPrefabs.TryGetValue(keyLetter, out skillButton))
+		if (!SpellButtons.TryGetValue(keyLetter, out skillButton))
 		{
 			Debug.LogError(keyLetter + " SkillButton not found in dictionary");
 		}
@@ -76,6 +98,45 @@ public class SpellManager : MonoBehaviour
 			{
 				StartCoroutine(skill.GlobalCooldown(globalCooldown));
 			}
+		}
+	}
+
+	private void SwapActionBar(Weapon weapon)
+	{
+		if (weapon == Weapon.SwordAndShield)
+		{
+			Destroy(currentActionBar);
+			Instantiate(shieldActionBar, canvas);
+			currentActionBar = shieldActionBar;
+		}
+		else if (weapon == Weapon.Greatsword)
+		{
+			Destroy(currentActionBar);
+			Instantiate(greatswordActionBar, canvas);
+			currentActionBar = greatswordActionBar;
+		}
+		else if (weapon == Weapon.Spear)
+		{
+			Destroy(currentActionBar);
+			Instantiate(spearActionBar, canvas);
+			currentActionBar = spearActionBar;
+		}
+		else if (weapon == Weapon.FistWeapons)
+		{
+			Destroy(currentActionBar);
+			Instantiate(fistActionBar, canvas);
+			currentActionBar = fistActionBar;
+		}
+	}
+
+	private void AddParticlesToDictionary()
+	{
+		SpellButtons.Clear();
+		skillButtons = FindObjectsOfType<SkillButton>();
+
+		foreach (SkillButton spellButton in skillButtons)
+		{
+			SpellButtons.Add(spellButton.key, spellButton);
 		}
 	}
 }

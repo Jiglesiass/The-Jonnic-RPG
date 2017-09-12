@@ -13,6 +13,11 @@ public class PlayerAnimator : MonoBehaviour
 	public Transform newParent;
 	public Animator shieldAnimator;
 
+	private const string shieldTransformAnimationTrigger = "shield";
+	private const string spearTransformAnimationTrigger = "spear";
+	private const string greatswordTransformAnimationTrigger = "greatsword";
+	private const string fistTransformAnimationTrigger = "fist";
+
 	private NavMeshAgent agent;      
 	private Animator anim;
 	private static PlayerState playerState;
@@ -158,7 +163,7 @@ public class PlayerAnimator : MonoBehaviour
 
 	private void AnimateShield()
 	{
-		shieldAnimator.SetBool("swordOut", swordOut);
+		shieldAnimator.SetBool("weaponOut", swordOut);
 	}
 
 	#region FreezePosition
@@ -208,5 +213,25 @@ public class PlayerAnimator : MonoBehaviour
 	public void SetAnimatorTrigger(string parameterName)
 	{
 		anim.SetTrigger(parameterName);
+	}
+
+	public void SwapWeapon(Weapon weapon)
+	{
+		if (weapon == Weapon.SwordAndShield)
+		{
+			anim.SetTrigger(shieldTransformAnimationTrigger);
+		}
+		else if (weapon == Weapon.Greatsword)
+		{
+			anim.SetTrigger(greatswordTransformAnimationTrigger);
+		}
+		else if (weapon == Weapon.Spear)
+		{
+			anim.SetTrigger(spearTransformAnimationTrigger);
+		}
+		else if (weapon == Weapon.FistWeapons)
+		{
+			anim.SetTrigger(fistTransformAnimationTrigger);
+		}
 	}
 }
