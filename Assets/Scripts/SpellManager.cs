@@ -58,19 +58,19 @@ public class SpellManager : MonoBehaviour
 		{
 			SwapActionBar (Weapon.Spear);
 			AddParticlesToDictionary();
-			//playerAnim.SwapWeapon(Weapon.Spear);
+			playerAnim.SwapWeapon(Weapon.Spear);
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha2))
 		{
 			SwapActionBar (Weapon.Greatsword);
 			AddParticlesToDictionary();
-			//playerAnim.SwapWeapon(Weapon.Greatsword);
+			playerAnim.SwapWeapon(Weapon.Greatsword);
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha3))
 		{
 			SwapActionBar (Weapon.FistWeapons);
 			AddParticlesToDictionary();
-			//playerAnim.SwapWeapon(Weapon.FistWeapons);
+			playerAnim.SwapWeapon(Weapon.FistWeapons);
 		}
 	}
 
@@ -123,7 +123,14 @@ public class SpellManager : MonoBehaviour
 
 		foreach (SkillButton spellButton in FindObjectsOfType<SkillButton>())
 		{
-			SpellButtons.Add(spellButton.key, spellButton);
+			try
+			{
+				SpellButtons.Add(spellButton.key, spellButton);
+			}
+			catch
+			{
+				Debug.Log("Some error ocurred. Kappa.");
+			}
 		}
 	}
 

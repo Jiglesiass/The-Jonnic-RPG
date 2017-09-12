@@ -217,6 +217,7 @@ public class PlayerAnimator : MonoBehaviour
 
 	public void SwapWeapon(Weapon weapon)
 	{
+		Debug.Log("SwapWeapon called");
 		if (weapon == Weapon.SwordAndShield)
 		{
 			anim.SetTrigger(shieldTransformAnimationTrigger);
@@ -228,6 +229,7 @@ public class PlayerAnimator : MonoBehaviour
 		else if (weapon == Weapon.Spear)
 		{
 			anim.SetTrigger(spearTransformAnimationTrigger);
+			Debug.Log("spear triggered");
 		}
 		else if (weapon == Weapon.FistWeapons)
 		{
