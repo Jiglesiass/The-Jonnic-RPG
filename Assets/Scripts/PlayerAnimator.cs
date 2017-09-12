@@ -64,7 +64,7 @@ public class PlayerAnimator : MonoBehaviour
 		{
 			playerState = (swordOut) ? PlayerState.idle : PlayerState.battleStance;
 			swordOut = !swordOut;
-			anim.SetBool("swordOut", swordOut);
+			anim.SetBool("weaponOut", swordOut);
 			startCounting = true;
 		}
 

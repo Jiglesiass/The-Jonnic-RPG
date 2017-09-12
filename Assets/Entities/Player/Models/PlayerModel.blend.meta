@@ -153,6 +153,11 @@ ModelImporter:
     7400072: Spear-Q_One-HandedThrust
     7400074: Spear-R_Spin
     7400076: Spear-W_Dash
+    7400078: Greatsword_BattleStance
+    7400080: Greatsword_BasicAttack
+    7400082: Greatsword-E_DownToUp
+    7400084: Greatsword-Q_TopDown
+    7400086: Greatsword-R_Spin
     9500000: //RootNode
     13700000: Body
   materials:
@@ -168,40 +173,52 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'RollForward' has import animation warnings that
-      might lower retargeting quality:\n\t'Lower_Leg_R' has scale animation that will
-      be discarded.\n\nClip 'Run' has import animation warnings that might lower retargeting
-      quality:\n\t'Lower_Leg_L' has scale animation that will be discarded.\n\t'Foot_L'
-      has scale animation that will be discarded.\n\t'Foot_R' has scale animation
-      that will be discarded.\n\nClip 'Shield-R_Slam' has import animation warnings
-      that might lower retargeting quality:\n\t'Foot_R' has scale animation that will
-      be discarded.\n\nClip 'Shield-W_Dash' has import animation warnings that might
-      lower retargeting quality:\n\t'Foot_R' has scale animation that will be discarded.\n\nClip
-      'Spear_Draw' has import animation warnings that might lower retargeting quality:\n\t'Middle_Finger_1_L'
-      has translation animation that will be discarded.\n\t'Index_Finger_1_L' has
-      translation animation that will be discarded.\n\t'Pinky_1_L' has translation
-      animation that will be discarded.\n\t'Index_Finger_1_R' has translation animation
-      that will be discarded.\n\nClip 'Spear_EndTransform' has import animation warnings
-      that might lower retargeting quality:\n\t'Index_Finger_1_L' has translation
-      animation that will be discarded.\n\nClip 'Spear_Sheathe' has import animation
-      warnings that might lower retargeting quality:\n\t'Middle_Finger_1_L' has translation
-      animation that will be discarded.\n\t'Index_Finger_1_L' has translation animation
-      that will be discarded.\n\t'Pinky_1_L' has translation animation that will be
-      discarded.\n\t'Index_Finger_1_R' has translation animation that will be discarded.\n\nClip
-      'Spear-E_TopDown' has import animation warnings that might lower retargeting
-      quality:\n\t'Lower_Leg_L' has scale animation that will be discarded.\n\t'Foot_L'
-      has scale animation that will be discarded.\n\t'Foot_R' has scale animation
-      that will be discarded.\n\nClip 'Spear-Q_One-HandedThrust' has import animation
-      warnings that might lower retargeting quality:\n\t'Index_Finger_1_L' has translation
+    animationImportWarnings: "\nClip 'Greatsword-Q_TopDown' has import animation warnings
+      that might lower retargeting quality:\n\t'Foot_L' has scale animation that will
+      be discarded.\n\nClip 'Greatsword-R_Spin' has import animation warnings that
+      might lower retargeting quality:\n\t'Lower_Leg_L' has scale animation that will
+      be discarded.\n\t'Foot_L' has scale animation that will be discarded.\n\t'Foot_R'
+      has scale animation that will be discarded.\n\nClip 'RollForward' has import
+      animation warnings that might lower retargeting quality:\n\t'Lower_Leg_R' has
+      scale animation that will be discarded.\n\nClip 'Run' has import animation warnings
+      that might lower retargeting quality:\n\t'Lower_Leg_L' has scale animation that
+      will be discarded.\n\t'Foot_L' has scale animation that will be discarded.\n\t'Foot_R'
+      has scale animation that will be discarded.\n\nClip 'Shield_Run' has import
+      animation warnings that might lower retargeting quality:\n\t'Lower_Leg_L' has
+      scale animation that will be discarded.\n\t'Foot_L' has scale animation that
+      will be discarded.\n\t'Lower_Leg_R' has scale animation that will be discarded.\n\t'Foot_R'
+      has scale animation that will be discarded.\n\nClip 'Shield-R_Slam' has import
+      animation warnings that might lower retargeting quality:\n\t'Foot_R' has scale
+      animation that will be discarded.\n\nClip 'Shield-W_Dash' has import animation
+      warnings that might lower retargeting quality:\n\t'Foot_R' has scale animation
+      that will be discarded.\n\nClip 'Spear_Draw' has import animation warnings that
+      might lower retargeting quality:\n\t'Middle_Finger_1_L' has translation animation
+      that will be discarded.\n\t'Index_Finger_1_L' has translation animation that
+      will be discarded.\n\t'Pinky_1_L' has translation animation that will be discarded.\n\t'Index_Finger_1_R'
+      has translation animation that will be discarded.\n\nClip 'Spear_EndTransform'
+      has import animation warnings that might lower retargeting quality:\n\t'Index_Finger_1_L'
+      has translation animation that will be discarded.\n\nClip 'Spear_Run' has import
+      animation warnings that might lower retargeting quality:\n\t'Foot_L' has scale
       animation that will be discarded.\n\t'Foot_R' has scale animation that will
-      be discarded.\n\nClip 'Spear-R_Spin' has import animation warnings that might
-      lower retargeting quality:\n\t'Ring_Finger_1_L' has translation animation that
-      will be discarded.\n\t'Index_Finger_1_L' has translation animation that will
-      be discarded.\n\t'Foot_R' has scale animation that will be discarded.\n\nClip
-      'Spear-W_Dash' has import animation warnings that might lower retargeting quality:\n\t'Foot_R'
-      has scale animation that will be discarded.\n\nClip 'Walk' has import animation
-      warnings that might lower retargeting quality:\n\t'Foot_L' has scale animation
-      that will be discarded.\n\t'Foot_R' has scale animation that will be discarded.\n"
+      be discarded.\n\nClip 'Spear_Sheathe' has import animation warnings that might
+      lower retargeting quality:\n\t'Middle_Finger_1_L' has translation animation
+      that will be discarded.\n\t'Index_Finger_1_L' has translation animation that
+      will be discarded.\n\t'Pinky_1_L' has translation animation that will be discarded.\n\t'Index_Finger_1_R'
+      has translation animation that will be discarded.\n\nClip 'Spear-E_TopDown'
+      has import animation warnings that might lower retargeting quality:\n\t'Lower_Leg_L'
+      has scale animation that will be discarded.\n\t'Foot_L' has scale animation
+      that will be discarded.\n\t'Foot_R' has scale animation that will be discarded.\n\nClip
+      'Spear-Q_One-HandedThrust' has import animation warnings that might lower retargeting
+      quality:\n\t'Index_Finger_1_L' has translation animation that will be discarded.\n\t'Foot_R'
+      has scale animation that will be discarded.\n\nClip 'Spear-R_Spin' has import
+      animation warnings that might lower retargeting quality:\n\t'Ring_Finger_1_L'
+      has translation animation that will be discarded.\n\t'Index_Finger_1_L' has
+      translation animation that will be discarded.\n\t'Foot_R' has scale animation
+      that will be discarded.\n\nClip 'Spear-W_Dash' has import animation warnings
+      that might lower retargeting quality:\n\t'Foot_R' has scale animation that will
+      be discarded.\n\nClip 'Walk' has import animation warnings that might lower
+      retargeting quality:\n\t'Foot_L' has scale animation that will be discarded.\n\t'Foot_R'
+      has scale animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -745,34 +762,6 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Spear_EndTransform
-      takeName: Spear_EndTransform
-      firstFrame: 0
-      lastFrame: 9
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
-      keepOriginalOrientation: 1
-      keepOriginalPositionY: 0
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 1
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
       name: Spear-E_TopDown
       takeName: Spear-E_TopDown
       firstFrame: 0
@@ -872,6 +861,146 @@ ModelImporter:
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Greatsword_BattleStance
+      takeName: Greatsword_BattleStance
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Greatsword_BasicAttack
+      takeName: Greatsword_BasicAttack
+      firstFrame: 0
+      lastFrame: 11
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Greatsword-E_DownToUp
+      takeName: Greatsword-E_DownToUp
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Greatsword-Q_TopDown
+      takeName: Greatsword-Q_TopDown
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Greatsword-R_Spin
+      takeName: Greatsword-R_Spin
+      firstFrame: 0
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
