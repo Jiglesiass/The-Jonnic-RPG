@@ -158,6 +158,11 @@ ModelImporter:
     7400082: Greatsword-E_DownToUp
     7400084: Greatsword-Q_TopDown
     7400086: Greatsword-R_Spin
+    7400088: Greatsword_Draw
+    7400090: Greatsword_Sheathe
+    7400092: Greatsword_Run
+    7400094: Spear_Run
+    7400096: Shield_Run
     9500000: //RootNode
     13700000: Body
   materials:
@@ -173,11 +178,23 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Greatsword-Q_TopDown' has import animation warnings
-      that might lower retargeting quality:\n\t'Foot_L' has scale animation that will
-      be discarded.\n\nClip 'Greatsword-R_Spin' has import animation warnings that
-      might lower retargeting quality:\n\t'Lower_Leg_L' has scale animation that will
-      be discarded.\n\t'Foot_L' has scale animation that will be discarded.\n\t'Foot_R'
+    animationImportWarnings: "\nClip 'Greatsword_Draw' has import animation warnings
+      that might lower retargeting quality:\n\t'Middle_Finger_1_L' has translation
+      animation that will be discarded.\n\t'Index_Finger_1_L' has translation animation
+      that will be discarded.\n\t'Pinky_1_L' has translation animation that will be
+      discarded.\n\t'Index_Finger_1_R' has translation animation that will be discarded.\n\nClip
+      'Greatsword_Run' has import animation warnings that might lower retargeting
+      quality:\n\t'Foot_L' has scale animation that will be discarded.\n\t'Foot_R'
+      has scale animation that will be discarded.\n\nClip 'Greatsword_Sheathe' has
+      import animation warnings that might lower retargeting quality:\n\t'Middle_Finger_1_L'
+      has translation animation that will be discarded.\n\t'Index_Finger_1_L' has
+      translation animation that will be discarded.\n\t'Pinky_1_L' has translation
+      animation that will be discarded.\n\t'Index_Finger_1_R' has translation animation
+      that will be discarded.\n\nClip 'Greatsword-Q_TopDown' has import animation
+      warnings that might lower retargeting quality:\n\t'Foot_L' has scale animation
+      that will be discarded.\n\nClip 'Greatsword-R_Spin' has import animation warnings
+      that might lower retargeting quality:\n\t'Lower_Leg_L' has scale animation that
+      will be discarded.\n\t'Foot_L' has scale animation that will be discarded.\n\t'Foot_R'
       has scale animation that will be discarded.\n\nClip 'RollForward' has import
       animation warnings that might lower retargeting quality:\n\t'Lower_Leg_R' has
       scale animation that will be discarded.\n\nClip 'Run' has import animation warnings
@@ -997,6 +1014,146 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Greatsword_Draw
+      takeName: Greatsword_Draw
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Greatsword_Sheathe
+      takeName: Greatsword_Sheathe
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Greatsword_Run
+      takeName: Greatsword_Run
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Spear_Run
+      takeName: Spear_Run
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Shield_Run
+      takeName: Shield_Run
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
